@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>SeductX</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+
+
+
+    <!-- script
+    ================================================== -->
+
+</head>
+
+<body id="top">
+
+    <!-- preloader
+    ================================================== -->
+    <!-- <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> -->
+
+<!-- support form -->
+<div class="popup" data-popup="popup-3">
+    <div class="popup-inner">
+
+    <div class="cancel-box">
+       <h2 class="booking-title text-center text-pink mb-40"> Send your message</h2>
+            <div class="screen__container">
+                <label for="">Your message</label>
+                <textarea class="full-width" id="" rows="8" placeholder="comment here..">
+                </textarea>
+        </div>
+        <div class="btn-sec d-flex justify-around">
+            <button class="btn btn-previous" data-popup-close="popup-3"> Cancel </button>
+            <a href=""><button type="Submit" class="btn btn--primary btn-next" data-popup-close="popup-3"> Submit </button></a>
+        </div>
+    </div>
+    </div>
+
+    <a class="popup-close" data-popup-close="popup-3" href="#">x</a>
+</div>
+<!-- support form -->
+
+    <!-- header
+    ================================================== -->
+      <app-navigation></app-navigation>
+    <!-- end header -->
+
+
+    <!-- home
+    ================================================== -->
+    <section id="" class="s-home mini-slide search-bg">
+
+        <div class="shadow-overlay"></div>
+            <div class="row home-content__main px-0rspn-600">
+                <div class="col-twelve">
+                    <h1>
+                    Escort Profile
+                    </h1>
+                    <p class="text-white mb-40"> escort personal and rates details </p>
+                </div> <!-- end home-content__left-->
+
+        </div> <!-- end home-content -->
+
+    </section> <!-- end s-home -->
+
+    <section id="features" class="s-features search escort py-md-rspn-0">
+    <div class="row home-content__main px-0rspn-600 pb-md-0">
+        <div class="gutter-none">
+            <div class="col-four text-center w-md-100rspn">
+               <div class="border-box position-relative my-md-rspn-0">
+                  <div class="profile-img">
+                    <span class="position-relative d-inline ">
+                    <img [src]="escortInfo['profile_image']" alt="profile-image">
+
+                    </span>
+                  </div>
+                  <h4 class="text-center"> {{escortInfo['first_name']}} <span class="">({{escortInfo['age']}} year old)</span> </h4>
+                  <div class="col-six text-center full-width">
+                    <div class="yellow-rate">
+                      <ngb-rating [rate]="escortInfo['avg_rating']" max="5" [readonly]="true"></ngb-rating>
+                    </div>
+                  </div>
+                  <ul class="stats-tabs font-16 mt-15 mb-0">
+                    <li><a href="#">Gender <em>{{escortInfo['gender']}}</em></a></li>
+                    <li><a href="#">Height <em>{{escortInfo['height']}} cm</em></a></li>
+                    <li><a href="#">Body type <em>{{escortInfo['body_type_name']}}</em></a></li>
+                </ul>
+                <div class="text-center">
+                    <a href="#" [routerLink]="['/agent/escortAccepted', escortId]"><button class="btn btn--primary">view booking</button></a>
+                </div>
+               </div>
+            </div>
+
+            <div class="col-eight w-md-100rspn">
+                <div class="border-box p-30 position-relative my-md-rspn-0 ">
+                <div class="profile-slide">
+
+                </div>
+                <h4 class="pb-30"> Personal details</h4>
+                <div class="table-responsive">
+
+                    <table>
+
+                            <tbody>
+                            <tr>
+                                <td><strong> Agency </strong></td>
+                                <td>{{escortInfo['agency']}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong> Bust Size </strong></td>
+                                <td>{{escortInfo['bust_size']}}</td>
+                            </tr>
+
+                            <tr>
+                                <td><strong> Cup Size </strong></td>
+                                <td>{{escortInfo['cup_size']}}</td>
+                            </tr>
+
+                            <tr>
+                                <td><strong> Waise Size </strong></td>
+                                <td>{{escortInfo['waise_size']}}</td>
+                            </tr>
+
+                            <tr>
+                                <td><strong> Hip Size </strong></td>
+                                <td>{{escortInfo['hip_size']}}</td>
+                            </tr>
+
+                            <tr>
+                                <td><strong> Nationality </strong></td>
+                                <td>{{escortInfo['country_name']}}</td>
+                            </tr>
+
+                            <tr>
+                                <td><strong> Languages </strong></td>
+                                <td>
+                                    <span *ngIf="escortInfo['english_id'] != '1'">English ({{escortInfo['english_type']}}) &nbsp;</span>
+                                    <span *ngIf="escortInfo['chinese_id'] != '1'">Chinese ({{escortInfo['chinese_type']}}) &nbsp;</span>
+                                    <span *ngIf="escortInfo['japanese_id'] != '1'">Japanese ({{escortInfo['japanese_type']}}) &nbsp;</span>
+                                    <span *ngIf="escortInfo['korean_id'] != '1'">Korean ({{escortInfo['korean_type']}}) &nbsp;</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Services  </strong></td>
+                                <td>
+                                    <span class="badge active" *ngFor="let addtionalData of escortInfo['addtional_service']">{{addtionalData['service_title']}}</span>
+                                    <span class="badge" *ngFor="let serviceData of escortInfo['service']">{{serviceData['title']}}</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong> Response time   </strong></td>
+                                <td>Always responds within 10 mins</td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Traking  </strong></td>
+                                <td>Not available</td>
+                            </tr>
+                            </tbody>
+                    </table>
+
+                </div>
+
+                <h4 class="pb-30 mt-15"> Photos</h4>
+
+                <div class="gutter-none photo-box mb-40">
+                    <div class="col-three p-0-10 mb-20 w-sm-100rspn">
+                        <img [src]="escortInfo['image1']" class="img-responsive">
+                    </div>
+                    <div class="col-three p-0-10 mb-20 w-sm-100rspn" >
+                        <img [src]="escortInfo['image2']" class="img-responsive">
+                    </div>
+                    <div class="col-three p-0-10 mb-20 w-sm-100rspn">
+                        <img [src]="escortInfo['image3']" class="img-responsive">
+                    </div>
+                    <div class="col-three p-0-10 mb-20 w-sm-100rspn">
+                        <img [src]="escortInfo['image4']" class="img-responsive">
+                    </div>
+                    <div class="col-three p-0-10 mb-20 w-sm-100rspn">
+                        <img [src]="escortInfo['image5']" class="img-responsive">
+                    </div>
+                    <div class="col-three p-0-10 mb-20 w-sm-100rspn">
+                        <img [src]="escortInfo['image6']" class="img-responsive">
+                    </div>
+                </div>
+
+                <div class="call-tab">
+
+                    <div class="tab">
+                     <h5 class="p-15 mt-0 mb-0"> Rate and number of shots </h5>
+                    </div>
+
+                    <div id="incall" class="tabcontent active">
+                      <div class="table-responsive">
+
+                    <table>
+                        <thead>
+                            <th> <strong>Duration </strong> </th>
+                            <th> <strong>Price</strong> </th>
+                            <th> <strong>Shots</strong> </th>
+                        </thead>
+
+                            <tbody>
+                            <tr *ngFor="let rateData of escortInfo['rate']">
+                                <td>{{rateData['hour_name']}} </td>
+                                <td>{{rateData['amount']| currency : 'AUD' : true : '4.0'}}</td>
+                                <td>{{rateData['shot_name']}}</td>
+                            </tr>
+                       </tbody>
+                   </table>
+               </div>
+                    </div>
+
+                </div>
+
+                <div class="payment-box">
+                    <h5> Payment method </h5>
+                    <p>{{escortInfo['payment_method']}}</p>
+                </div>
+                <div class="payment-box">
+                    <h5> Cancellation policy </h5>
+                    <p>{{escortInfo['cancellation_policy']}}</p>
+                </div>
+
+                <!-- <div class="border-box">
+                    <h5> Reviews </h5>
+                    <p> Reviews are only available for Premium members.<br/>
+                     <strong><a href=""> Login </a> or <a href=""> Sign Up </a></strong></p>
+                </div> -->
+            </div> <!-- border-box -->
+
+            </div>
+        </div>
+    </div> <!-- home-content__main -->
+
+    </section>
+
+    <!-- footer
+    ================================================== -->
+    <app-footer></app-footer>
+    <!-- end s-footer -->
+</body>

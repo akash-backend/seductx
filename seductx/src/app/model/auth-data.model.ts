@@ -1,0 +1,8 @@
+export interface AuthData {
+  first_name: string;
+  last_name: string;
+  email: string;
+  password: string;
+  country_code: string;
+  phone_number: string;
+}

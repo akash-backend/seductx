@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>SeductX</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <!-- script
+    ================================================== -->
+</head>
+
+<body id="top">
+
+    <!-- preloader
+    ================================================== -->
+    <!-- <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> -->
+
+
+    <!-- header
+    ================================================== -->
+      <app-navigation></app-navigation>
+    <!-- end header -->
+
+
+    <!-- home
+    ================================================== -->
+    <section id="" class="s-home mini-slide search-bg">
+
+        <div class="shadow-overlay"></div>
+            <div class="row home-content__main">
+                <div class="col-twelve text-center mb-40">
+                    <h1> Escort Signup </h1>
+                <p class="text-white"> Create your account an earn money </p>
+                </div> <!--twelve-->
+
+        </div> <!-- end home-content -->
+        <div class="login-icon"> <i class="fa fa-chevron-down"></i> </div>
+
+    </section> <!-- end s-home -->
+
+<section id="features" class="s-features search escort py-md-rspn-40 py-sm-rspn-0">
+    <div class="section-header w-100 mx-auto mb-40 my-md-rspn-0">
+        <div class="row d-flex px-sm-0rspn mt-md-50rspn">
+            <div class="w-25 text-center">
+                <a class="circle-btn active" href=""> <i class="fa fa-check"></i>  </a>
+                 <p class="text-center mt-15"> Create Profile</p>
+            </div> <!-- col-three -->
+            <div class="w-25 text-center">
+                <a class="circle-btn active" href=""> <i class="fa fa-check"></i>  </a>
+                <p class="text-center mt-15"> Add Services</p>
+            </div> <!-- col-three -->
+            <div class="w-25 text-center">
+                <a class="circle-btn active" href=""> <i class="fa fa-check"></i>  </a>
+                 <p class="text-center mt-15"> Your Rates</p>
+            </div> <!-- col-three -->
+            <div class="w-25 text-center">
+                <a class="circle-btn active line-none" href=""> 4 </a>
+                 <p class="text-center mt-15"> Your Photos</p>
+            </div> <!-- col-three -->
+        </div>
+
+        <div class="border-box form-box p-40 my-md-rspn-0">
+          <mat-spinner *ngIf="isLoading"></mat-spinner>
+          <form [formGroup]="form" (submit)="onSavePost()" *ngIf="!isLoading">
+                    <div class="text-center">
+                        <h3 class="text-black"> Upload profile picture </h3>
+                    </div>
+                <div class="col-twelve text-center">
+                  <div class="droparea mb-40">
+                    <div class="droparea text-center" (click)="profileFilePicker.click()">
+                      <img [src]="profileImagePreview"> <br >
+                    </div>
+                  </div>
+                  <input type="file"  accept="image/*" #profileFilePicker (change)="onProfileImagePicked($event)" style="display: none;" >
+                </div>
+
+              <div class="text-center">
+                  <h3 class="text-black mt-15 pb-10"> Upload more pictures  </h3>
+              </div>
+
+                 <div class="gutter-none">
+            <div class="UploadPicture">
+              <div class="w-33 pull-left text-center">
+                <div class="droparea">
+                  <div class="droparea text-center" (click)="file1Picker.click()">
+                      <img [src]="image1Preview"> <br >
+                  </div>
+                </div>
+                <input type="file"  accept="image/*" #file1Picker (change)="onImage1Picked($event)" style="display: none;" >
+              </div>
+
+              <div class="w-33 pull-left text-center">
+                  <div class="droparea">
+                    <div class="droparea text-center" (click)="file2Picker.click()">
+                        <img [src]="image2Preview"> <br >
+                    </div>
+                  </div>
+                  <input type="file"  accept="image/*" #file2Picker (change)="onImage2Picked($event)" style="display: none;" >
+              </div>
+
+              <div class="w-33 pull-left text-center">
+                  <div class="droparea">
+                    <div class="droparea text-center" (click)="file3Picker.click()">
+                        <img [src]="image3Preview"> <br >
+                    </div>
+                  </div>
+                  <input type="file"  accept="image/*" #file3Picker (change)="onImage3Picked($event)" style="display: none;" >
+              </div>
+
+              <div class="w-33 pull-left text-center">
+                  <div class="droparea">
+                    <div class="droparea text-center" (click)="file4Picker.click()">
+                        <img [src]="image4Preview"> <br >
+                    </div>
+                  </div>
+                  <input type="file"  accept="image/*" #file4Picker (change)="onImage4Picked($event)" style="display: none;" >
+              </div>
+
+              <div class="w-33 pull-left text-center">
+                  <div class="droparea">
+                    <div class="droparea text-center" (click)="file5Picker.click()">
+                        <img [src]="image5Preview"> <br >
+                    </div>
+                  </div>
+                  <input type="file"  accept="image/*" #file5Picker (change)="onImage5Picked($event)" style="display: none;" >
+              </div>
+
+              <div class="w-33 pull-left text-center">
+                  <div class="droparea">
+                    <div class="droparea text-center" (click)="file6Picker.click()">
+                        <img [src]="image6Preview"> <br >
+                    </div>
+                  </div>
+                  <input type="file"  accept="image/*" #file6Picker (change)="onImage6Picked($event)" style="display: none;" >
+              </div>
+              </div>
+
+
+                    </div> <!-- gutter none -->
+
+                <div class="gutter-none">
+                 <div class="col-six pull-left text-left mt-15">
+                    <a href="add-rates.html"> <button type="button" class="btn btn-previous btn-wd full-width"> Back </button></a>
+                </div>
+                <div class="col-six pull-right text-right mt-15">
+                    <button type="submit" class="btn btn--primary full-width"> Submit </button>
+                </div>
+                </div>
+                </form>
+        </div>
+    </div>
+    </section>
+
+    <!-- footer
+    ================================================== -->
+    <app-footer></app-footer>
+    <!-- end s-footer -->
+
+
+    <!-- Java Script
+    ================================================== -->
+</body>

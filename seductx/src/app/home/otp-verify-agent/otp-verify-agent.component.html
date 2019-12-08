@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>SeductX</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+
+
+    <!-- script
+    ================================================== -->
+</head>
+
+<body id="top">
+
+    <!-- preloader
+    ================================================== -->
+    <!-- <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> -->
+
+    <!-- booking form -->
+<div class="popup" data-popup="popup-1">
+    <div class="popup-inner">
+        <div class="country-tab" id="id1" style="display: block;">
+        <h2 class="booking-title text-center text-pink mb-40">Book an Escort</h2>
+        <h4 class="text-center mt-0 mb-40"> Select your country</h4>
+        <div class="screen__container" onclick="show('id2');">
+            <a class="litem active"><div class="litem__title">Asia</div>
+                <i class="fa fa-long-arrow-right litem__icon"></i>
+            </a>
+            <a class="litem"><div class="litem__title">Germany</div>
+                <i class="fa fa-long-arrow-right litem__icon"></i>
+            </a>
+            <a class="litem"><div class="litem__title">Netherlands</div>
+                <i class="fa fa-long-arrow-right litem__icon"></i>
+            </a>
+            <a class="litem"><div class="litem__title">Spain</div>
+                <i class="fa fa-long-arrow-right litem__icon"></i>
+            </a>
+            <a class="litem"><div class="litem__title">United Kingdom</div>
+                <i class="fa fa-long-arrow-right litem__icon"></i>
+            </a>
+        </div>
+        <div class="btn-sec w-100 text-right">
+             <button class="btn btn--primary btn-next" onclick="show('id2');"> Next </button>
+        </div>
+
+    </div> <!-- country box -->
+
+    <div class="city-tab" id="id2" style="display: none;">
+        <h2 class="booking-title text-center text-pink mb-40">Book an Escort</h2>
+        <h4 class="text-center mt-0 mb-40"> Select your City</h4>
+        <div class="screen__container" onclick="show('id3');">
+            <a class="litem active"><div class="litem__title">Bangkok</div>
+                <i class="fa fa-long-arrow-right litem__icon"></i>
+            </a>
+            <a class="litem"><div class="litem__title">Manila</div>
+                <i class="fa fa-long-arrow-right litem__icon"></i>
+            </a>
+            <a class="litem"><div class="litem__title">Hong Kong</div>
+                <i class="fa fa-long-arrow-right litem__icon"></i>
+            </a>
+            <a class="litem"><div class="litem__title">Macau</div>
+                <i class="fa fa-long-arrow-right litem__icon"></i>
+            </a>
+            <a class="litem"><div class="litem__title">Singapore</div>
+                <i class="fa fa-long-arrow-right litem__icon"></i>
+            </a>
+            <a class="litem"><div class="litem__title">Kuala Lumpur</div>
+                <i class="fa fa-long-arrow-right litem__icon"></i>
+            </a>
+            <a class="litem"><div class="litem__title">Tokyo</div>
+                <i class="fa fa-long-arrow-right litem__icon"></i>
+            </a>
+
+        </div>
+        <div class="btn-sec d-flex justify-around">
+            <button class="btn btn-previous" onclick="show('id1');"> Back </button>
+             <button class="btn btn--primary btn-next" onclick="show('id3');"> Next </button>
+        </div>
+    </div> <!-- city box -->
+
+    <div id="id3" class="gender-tab" style="display: none;">
+       <h2 class="booking-title text-center text-pink mb-40">Book an Escort</h2>
+
+       <ul class="stats-tabs font-16 mt-15 mb-0 text-center pb-15">
+            <li><a href="#"><em>Bangkok</em></a></li>
+        </ul>
+
+        <h4 class="text-center mt-0 mb-40"> I would like to meet a</h4>
+        <div class="screen__container wizard-card">
+            <div class="row text-center">
+                <div class="d-inline">
+                <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="">
+                       <input type="radio" name="type" value="House">
+                           <div class="icon">
+                           <i class="material-icons"><span class="fa fa-female"> </span></i>
+                            </div>
+                             <h6>Female</h6>
+                             </div>
+                            </div>
+                <div class="d-inline">
+                    <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="">
+                        <input type="radio" name="type" value="Appartment">
+                        <div class="icon">
+                            <i class="material-icons"><span class="fa fa-venus-mars"> </span></i>
+                        </div>
+                        <h6>Transsexual</h6>
+                    </div>
+                </div>
+            </div>
+</div>
+        <div class="btn-sec d-flex justify-around">
+            <button class="btn btn-previous" onclick="show('id2');"> Back </button>
+             <button class="btn btn--primary btn-next" onclick="show('id4');"> Next </button>
+        </div>
+    </div> <!-- gender-tab -->
+
+
+    <div id="id4" class="call-tab" style="display: none;">
+       <h2 class="booking-title text-center text-pink mb-40">Book an Escort</h2>
+       <ul class="stats-tabs font-16 mt-15 mb-0 text-center">
+            <li><a href="#"><em>Bangkok </em></a></li>
+            <li><a href="#"><em>Female </em></a></li>
+        </ul>
+        <h4 class="text-center mt-0 mb-40"> In or Outcall?</h4>
+        <div class="screen__container wizard-card">
+            <div class="row text-center">
+                <div class="d-inline">
+                <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="">
+                       <input type="radio" name="type" value="House">
+                           <div class="icon">
+                           <i class="material-icons"><span class="fa fa-female"> </span></i>
+                            </div>
+                             <h6>Outcall</h6>
+                              <p class="small grey-txt"> (She comes to you)</p>
+                             </div>
+                            </div>
+                <div class="d-inline">
+                    <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="">
+                        <input type="radio" name="type" value="Appartment">
+                        <div class="icon">
+                            <i class="material-icons"><i class="fa fa-male"></i></i>
+                        </div>
+                        <h6>Incall</h6>
+                         <p class="small grey-txt"> (You go to her)</p>
+                    </div>
+                </div>
+            </div>
+</div>
+
+       <div class="btn-sec d-flex justify-around">
+            <button class="btn btn-previous" onclick="show('id3');"> Back </button>
+             <button class="btn btn--primary btn-next" onclick="show('id5');"> Next </button>
+        </div>
+    </div>
+    <div id="id5" class="day-tab" style="display: none;">
+       <h2 class="booking-title text-center text-pink mb-40">Book an Escort</h2>
+       <ul class="stats-tabs font-16 mt-15 mb-0 text-center">
+            <li><a href="#"><em>Bangkok </em></a></li>
+            <li><a href="#"><em>Female </em></a></li>
+            <li><a href="#"><em>Outcall </em></a></li>
+        </ul>
+        <h4 class="text-center mt-0 mb-40"> I would like to meet at</h4>
+        <div class="screen__container wizard-card">
+            <div class="form-group label-floating d-flex justify-center">
+                                                  <div class="minus-btn"><i class="fa fa-minus"></i></div>
+                                                  <div class="left-time">09:15</div>
+                                                  <div class="right-time">
+                                                    <p><span>AM</span></p>
+                                                    <p>PM</p>
+                                                  </div>
+                                                  <div class="plus-btn"><i class="fa fa-plus"></i></div>
+                                                </div>
+        </div>
+       <div class="btn-sec d-flex justify-around">
+            <button class="btn btn-previous" onclick="show('id4');"> Back </button>
+             <button class="btn btn--primary btn-next" onclick="show('id6');"> Next </button>
+        </div>
+    </div> <!-- day tab -->
+    <div id="id6" class="time-tab" style="display: none;">
+       <h2 class="booking-title text-center text-pink mb-40">Book an Escort</h2>
+       <ul class="stats-tabs font-16 mt-15 mb-0 text-center">
+            <li><a href="#"><em>Bangkok </em></a></li>
+            <li><a href="#"><em>Female </em></a></li>
+            <li><a href="#"><em>Outcall </em></a></li>
+            <li><a href="#"><em>10:15 PM </em></a></li>
+        </ul>
+        <h4 class="text-center mt-0 mb-40"> I would like to book for</h4>
+        <div class="screen__container wizard-card">
+            <div class="form-group label-floating d-flex justify-center">
+                                                  <div class="minus-btn"><i class="fa fa-minus"></i></div>
+                                                  <div class="left-time">02</div>
+                                                  <div class="right-time">
+                                                    <p> Hours</p>
+                                                  </div>
+                                                  <div class="plus-btn"><i class="fa fa-plus"></i></div>
+                                                </div>
+        </div>
+        <div class="btn-sec d-flex justify-around">
+            <button class="btn btn-previous" onclick="show('id5');"> Back </button>
+            <a href="search.html"><button class="btn btn--primary btn-next"> Search </button></a>
+        </div>
+    </div>
+
+
+    </div>
+      <div class="logo-fix"><a routerLink="/"><img src="assets/images/logo_black.png" class="img-responsive"></a></div>
+    <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+</div>
+<!-- booking form -->
+
+    <!-- header
+    ================================================== -->
+      <app-navigation></app-navigation>
+   <!-- end header -->
+
+
+    <!-- home
+    ================================================== -->
+    <section id="" class="s-home mini-slide search-bg">
+
+        <div class="shadow-overlay"></div>
+            <div class="row home-content__main">
+                <div class="col-twelve text-center mb-40">
+                    <h1> Escort Phone Number Verify</h1>
+
+                </div> <!--twelve-->
+
+        </div> <!-- end home-content -->
+        <div class="login-icon"> <i class="fa fa-chevron-down"></i> </div>
+
+    </section> <!-- end s-home -->
+
+    <section id="features" class="s-features search escort">
+
+      <div class="border-box form-sec section-header">
+        <form [formGroup]="form" (submit)="onSave()">
+
+                  <div class="gutter-none">
+
+                      <div class="col-twelve">
+                          <h3 class="text-center"> Enter your number </h3>
+                          <p class="mb-40"> Verification code has been sent to <span class="text-pink"><strong>{{phoneNumber}}</strong></span>, please enter OTP and verify your number</p>
+                          <label for="">Enter OTP</label>
+                      </div>
+                      <div class="col-twelve">
+                          <input class="otp-input" type="text" placeholder="" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="keytab($event)" formControlName="first">
+                          <input class="otp-input" type="text" placeholder="" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="keytab($event)" formControlName="second">
+                          <input class="otp-input" type="text" placeholder="" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="keytab($event)" formControlName="third">
+                          <input class="otp-input" type="text" placeholder="" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="keytab($event)" formControlName="fourth">
+                          <input class="otp-input" type="text" placeholder="" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="keytab($event)" formControlName="fifth">
+                          <input class="otp-input" type="text" placeholder="" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="keytab($event)" formControlName="six">
+                      </div>
+                      <div class="col-twelve mb-40 text-right mr-10 mt-15">
+                          <div class="col-twelve">
+                            <p> <a href="javascript:void(0)" (click)="onResend()"> Resend </a> </p>
+                          </div>
+                        </div>
+
+                  </div>
+
+                  <input class="btn--primary full-width" type="submit" value="Submit">
+
+              </form>
+      </div>
+
+  </section>
+
+    <!-- footer
+    ================================================== -->
+    <app-footer></app-footer>
+    <!-- end s-footer -->
+
+</body>

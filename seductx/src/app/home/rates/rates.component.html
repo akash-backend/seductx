@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>SeductX</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+
+
+    <!-- script
+    ================================================== -->
+
+</head>
+
+<body id="top">
+
+    <!-- preloader
+    ================================================== -->
+    <!-- <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> -->
+
+
+    <!-- header
+    ================================================== -->
+      <app-navigation></app-navigation>
+    <!-- end header -->
+
+
+    <!-- home
+    ================================================== -->
+    <section id="" class="s-home mini-slide search-bg">
+
+        <div class="shadow-overlay"></div>
+            <div class="row home-content__main">
+                <div class="col-twelve text-center mb-40">
+                    <h1> Escort Signup </h1>
+                <p class="text-white"> Create your account an earn money </p>
+                </div> <!--twelve-->
+
+        </div> <!-- end home-content -->
+        <div class="login-icon"> <i class="fa fa-chevron-down"></i> </div>
+
+    </section> <!-- end s-home -->
+
+<section id="features" class="s-features search escort py-md-rspn-40 py-sm-rspn-0">
+    <div class="section-header w-100 mx-auto mb-40 my-md-rspn-0">
+        <div class="row d-flex px-sm-0rspn mt-md-50rspn">
+            <div class="w-25 text-center">
+                <a class="circle-btn active" href=""> <i class="fa fa-check"></i>  </a>
+                 <p class="text-center mt-15"> Create Profile</p>
+            </div> <!-- col-three -->
+            <div class="w-25 text-center">
+                <a class="circle-btn active" href=""> <i class="fa fa-check"></i>  </a>
+                <p class="text-center mt-15"> Add Services</p>
+            </div> <!-- col-three -->
+            <div class="w-25 text-center">
+                <a class="circle-btn active" href=""> 3 </a>
+                 <p class="text-center mt-15"> Your Rates</p>
+            </div> <!-- col-three -->
+            <div class="w-25 text-center">
+                <a class="circle-btn line-none" href=""> 4 </a>
+                 <p class="text-center mt-15"> Your Photos</p>
+            </div> <!-- col-three -->
+        </div>
+
+        <div class="border-box form-box p-40 my-md-rspn-0 my-md-rspn-0">
+            <mat-spinner *ngIf="isLoading"></mat-spinner>
+          <form [formGroup]="form" (submit)="onSave()" *ngIf="!isLoading">
+                    <div class="text-center">
+                        <h3 class="mb-40 text-black"> Select rate and number of shots  </h3>
+                    </div>
+
+                 <div class="gutter-none" *ngFor="let rate of rates_list; let i = index;">
+                        <div class="col-two">
+                            <div class="d-flex">
+                                <div>
+                                <input class="styled-checkbox" id="styled-checkbox-{{i}}" type="checkbox" [value]="rate.hour_id" (change)="onCheck($event,i)">
+                                <label for="styled-checkbox-{{i}}"></label>
+                                </div>
+                                <div class="ml-20 ml-sm-8px d-flex align-items-center">
+                                    <label for="" class="mini-label">{{rate.name}}</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-five">
+                        <div>
+                            <div class="ss-custom-select">
+                            <select class="full-width" id="sampleShot{{i}}" (change)="onChage(i)">
+                                <option *ngFor="let shot of rate.shots_info" [value]="shot.shot_id">{{shot.name}}</option>
+                            </select>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="col-five">
+                        <div>
+                            <div class="ss-custom-select">
+                            <select class="full-width" id="samplePrice{{i}}" (change)="onChage(i)">
+                              <option *ngFor="let shot_price of rate.shots_price_info" [value]="shot_price.shots_price_id">{{shot_price.name}}</option>
+                            </select>
+                            </div>
+                        </div>
+                        </div>
+
+                    </div> <!-- gutter none -->
+
+
+
+
+
+
+                  <div class="gutter-none px-15px px-0rspn-600 mrgn-magic-form">
+                    <div class="text-left ">
+                        <h4 class="text-black pb-10"> Cancellation Policy  </h4>
+                        <input class="full-width" type="text" value="Cancellation on arrival 1,000 THB" formControlName="cancellation_policy">
+                        <P class="error_form" *ngIf="form.get('cancellation_policy').invalid">Please enter a Cancellation Policy.</P>
+                    </div>
+
+                    <div class="text-left">
+                        <h4 class="text-black pb-10"> Payment Methods  </h4>
+                        <input class="full-width" type="text" value="Payment to be made within 10 minutes of arrival in local currency" formControlName="payment_method">
+                        <P class="error_form" *ngIf="form.get('payment_method').invalid">Please enter a Payment Method.</P>
+                    </div>
+
+                    <div class="text-left">
+                        <p class="mb-20">For higher or alternative rates please contact us: <br/>
+                            <a href=""><strong>contactseductx@gmail.com</strong></a></p>
+                    </div>
+                  </div>
+
+                <div class="gutter-none">
+                 <div class="col-six pull-left text-left mt-15">
+                    <a href="add-services.html"> <button type="button" class="btn btn-previous btn-wd full-width"> Back </button></a>
+                </div>
+                <div class="col-six pull-right text-right mt-15">
+                  <button type="submit" class="btn btn--primary full-width"> Continue </button>
+                </div>
+                </div>
+                </form>
+        </div>
+    </div>
+    </section>
+
+    <!-- footer
+    ================================================== -->
+    <app-footer></app-footer>
+    <!-- end s-footer -->
+
+
+    <!-- Java Script
+    ================================================== -->
+
+</body>

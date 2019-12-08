@@ -1,0 +1,20 @@
+<div class="col-four text-center w-md-100rspn">
+  <div class="border-box position-relative mb-sm-rspn-0">
+     <div class="profile-img">
+       <span class="position-relative d-inline ">
+       <img src="assets/images/user-03.jpg" alt="profile-image">
+       </span>
+     </div>
+
+     <h4 class="text-center">{{userInfo['first_name']}}</h4>
+     <div class="col-six text-center full-width">
+      <div class="yellow-rate">
+        <ngb-rating [rate]="userInfo['avg_rating']" max="5" [readonly]="true"></ngb-rating>
+      </div>
+     </div>
+   <div class="text-center mt-15">
+       <button class="btn btn--primary" routerLink="/user/subscriptionPlan"> Premium Client</button>
+   </div>
+
+  </div>
+</div>

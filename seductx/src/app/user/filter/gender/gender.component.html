@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>SeductX</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+
+    <!-- script
+    ================================================== -->
+
+</head>
+
+<body id="top" style="background-color: #ffffff">
+
+    <!-- preloader
+    ================================================== -->
+    <!-- <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> -->
+
+
+<!-- booking form -->
+    <div class="popup-inner">
+         <div class="logo-fix"><a href="index.html"><img src="assets/images/logo_black.png" class="img-responsive"></a></div>
+    <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+
+    <div id="id3" class="gender-tab mt-60px">
+       <h2 class="booking-title text-center text-pink mb-40">Book an Escort</h2>
+
+       <ul class="stats-tabs font-16 mt-15 mb-0 text-center pb-15">
+            <li><a href="#"><em>{{city}}</em></a></li>
+        </ul>
+
+        <h4 class="text-center mt-0 mb-40"> I would like to meet a</h4>
+          <div class="screen__container wizard-card">
+              <div class="row text-center justify-content-center">
+                  <div class="d-inline">
+                    <div class="choice" (click)="onClick('Female')" [ngClass]="{active: isActive('Female')}" data-toggle="wizard-radio" rel="tooltip" title="">
+                        <div class="icon">
+                          <i class="material-icons"><span class="fa fa-female"> </span></i>
+                        </div>
+                          <h6>Female</h6>
+                    </div>
+                  </div>
+                  <div class="d-inline">
+                      <div class="choice" (click)="onClick('Transsexual')" [ngClass]="{active: isActive('Transsexual')}" data-toggle="wizard-radio" rel="tooltip" title="">
+                           <div class="icon">
+                              <i class="material-icons"><span class="fa fa-venus-mars"> </span></i>
+                          </div>
+                          <h6>Transsexual</h6>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="btn-sec d-flex justify-around">
+              <button class="btn btn-previous" routerLink="/user/filtercity"> Back </button>
+              <button class="btn btn--primary btn-next" (click)="onSaveFilter()"> Next </button>
+          </div>
+    </div> <!-- gender-tab -->
+    </div>
+</body>

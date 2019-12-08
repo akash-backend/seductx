@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>SeductX</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+
+    <!-- script
+    ================================================== -->
+
+</head>
+
+<body id="top" style="background-color: #ffffff">
+
+    <!-- preloader
+    ================================================== -->
+    <!-- <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> -->
+
+
+<!-- booking form -->
+    <div class="popup-inner">
+         <div class="logo-fix"><a href="index.html"><img src="assets/images/logo_black.png" class="img-responsive"></a></div>
+    <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+
+    <div id="id5" class="day-tab mt-60px">
+       <h2 class="booking-title text-center text-pink mb-40">Book an Escort</h2>
+       <ul class="stats-tabs font-16 mt-15 mb-0 text-center">
+            <li><a href="#"><em>{{city}} </em></a></li>
+            <li><a href="#"><em>{{gender}} </em></a></li>
+            <li><a href="#"><em> {{call}} </em></a></li>
+            <li><a href="#"><em> {{time}} </em></a></li>
+        </ul>
+        <h4 class="text-center mt-0 mb-40"> I would like to book for</h4>
+        <div class="screen__container wizard-card">
+            <div class="form-group label-floating d-flex justify-center">
+                                                  <div class="minus-btn" (click) = onDecrement()><i class="fa fa-minus"></i></div>
+                                                  <div class="left-time">{{hour}}</div>
+                                                  <div class="right-time">
+                                                    <p> Hours</p>
+                                                  </div>
+                                                  <div class="plus-btn" (click) = onIncrement()><i class="fa fa-plus"></i></div>
+                                                </div>
+        </div>
+
+       <div class="btn-sec d-flex justify-around">
+            <button class="btn btn-previous"  routerLink="/user/filtertime"> Back </button>
+             <a routerLink="/user/searchonline" class="btn btn--primary btn-next"> Next </a>
+        </div>
+    </div> <!-- day tab -->
+    </div>
+</body>
+

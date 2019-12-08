@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>SeductX</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+
+    <!-- script
+    ================================================== -->
+
+
+</head>
+
+<body id="top">
+
+    <!-- preloader
+    ================================================== -->
+    <!-- <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> -->
+
+
+    <!-- header
+    ================================================== -->
+        <app-navigation></app-navigation>
+    <!-- end header -->
+
+    <section id="features" class="s-features search escort mt-15 pt-md-rspn-60 pb-md-0">
+      <div class="chat-rspnsv">
+        <div class="shadow header-chat"><h3 class="my-0"><a routerLink="/escort/request"><i class="fa fa-chevron-left"></i> </a> {{name}}</h3></div>
+        <div class="box-chat" #scrollMe>
+          <div  *ngIf="messageArray">
+            <div *ngFor="let item of messageArray">
+              <div class="type-chat l-chat" *ngIf="item.sendForm == 'user'">{{item.message}}</div>
+              <div class="type-chat r-chat" *ngIf="item.sendForm == 'provider'">{{item.message}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex clearfix footer-chat">
+          <div class="w-100">
+              <input class="au-input au-input--full au-input--h65 ng-pristine ng-valid ng-touched" placeholder="Type a message" type="text" [(ngModel)]="messageText" (keydown)="onKeydown($event)" >
+          </div>
+          <div class="">
+              <div _ngcontent-ykr-c1="" class="media-box" (click)="sendMessage()"><span _ngcontent-ykr-c1="" class="send-media"><i _ngcontent-ykr-c1="" class="fa fa-paper-plane"></i></span></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- footer
+    ================================================== -->
+    <app-footer></app-footer>
+    <!-- end s-footer -->
+
+</body>

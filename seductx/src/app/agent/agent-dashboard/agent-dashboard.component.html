@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+   <head>
+      <!--- basic page needs
+         ================================================== -->
+      <meta charset="utf-8">
+      <title>SeductX</title>
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- mobile specific metas
+         ================================================== -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- CSS
+         ================================================== -->
+      <!-- script
+         ================================================== -->
+   </head>
+   <body id="top">
+      <!-- preloader
+         ================================================== -->
+      <!-- <div id="preloader">
+         <div id="loader" class="dots-jump">
+             <div></div>
+             <div></div>
+             <div></div>
+         </div>
+         </div> -->
+      <!-- cancel form -->
+      <div class="popup" data-popup="popup-2">
+         <div class="popup-inner">
+            <div class="cancel-box">
+               <h2 class="booking-title text-center text-pink mb-40">What is the reason of cancelling?</h2>
+               <div class="screen__container">
+                  <label class="radio-item">Client did not respond after i arrived
+                  <input type="radio" checked="checked" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">I am not available
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Location is too far
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Unable to verify/check client
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">This is duplicate booking
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Unable to contact client
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Cannot accommodate extra request(s)
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Client cancelled before i arrived
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Client cancelled after i arrived
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Other
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+               </div>
+               <div class="btn-sec d-flex justify-around">
+                  <button class="btn btn-previous" data-popup-close="popup-2"> Abort </button>
+                  <a href=""><button class="btn btn--primary btn-next" data-popup-close="popup-2"> Ok </button></a>
+               </div>
+            </div>
+         </div>
+         <a class="popup-close" data-popup-close="popup-2" href="#">x</a>
+      </div>
+      <!-- cancel form -->
+      <!-- support form -->
+      <div class="popup" data-popup="popup-3">
+         <div class="popup-inner">
+            <div class="cancel-box">
+               <h2 class="booking-title text-center text-pink mb-40"> Send your message</h2>
+               <div class="screen__container">
+                  <label for="">Your message</label>
+                  <textarea class="full-width" id="" rows="8" placeholder="comment here..">
+                  </textarea>
+               </div>
+               <div class="btn-sec d-flex justify-around">
+                  <button class="btn btn-previous" data-popup-close="popup-3"> Cancel </button>
+                  <a href=""><button type="Submit" class="btn btn--primary btn-next" data-popup-close="popup-3"> Submit </button></a>
+               </div>
+            </div>
+         </div>
+         <a class="popup-close" data-popup-close="popup-3" href="#">x</a>
+      </div>
+      <!-- support form -->
+      <!-- header
+         ================================================== -->
+            <app-navigation></app-navigation>
+      <!-- end header -->
+      <!-- home
+         ================================================== -->
+      <!-- home
+    ================================================== -->
+      <section id="" class="s-home mini-slide search-bg">
+            <div class="shadow-overlay"></div>
+                <div class="row home-content__main pb-md-0 px-0rspn-600">
+                    <div class="col-twelve text-center mb-40">
+                        <h1>
+                          Dashboard
+                        </h1>
+
+                    </div>
+
+            </div> <!-- end home-content -->
+
+      </section> <!-- end s-home -->
+
+
+      <section id="features" class="s-features search escort py-md-rspn-40 py-sm-rspn-0">
+        <div class="row home-content__main pb-md-0 px-0rspn-600">
+            <div class="gutter-none">
+                <div class="col-twelve"><h3 class="mb text-black"> My Account  </h3></div>
+                <div class="col-four text-center w-md-100rspn">
+                  <div class="border-box position-relative my-md-rspn-0">
+                      <div class="profile-img">
+                        <span class="position-relative d-inline ">
+                        <img src="assets/images/agent_default.png" alt="profile-image">
+                        </span>
+                      </div>
+
+                      <h4 class="text-center"> {{agentInfo['first_name']}} {{agentInfo['last_name']}}</h4>
+                      <h2 class="text-center"> {{agentInfo['agency_name']}}</h2>
+                      <div class="col-six text-center full-width">
+                      </div>
+                    <div class="text-center mt-15">
+                        <button class="btn btn--primary"> Premium Agent </button>
+                    </div>
+
+
+                  </div>
+                </div>
+
+                <div class="col-eight w-md-100rspn">
+
+                <div class="border-box p-30 position-relative h-440 my-md-rspn-0">
+              <div class="row">
+                <div class="col-twelve">
+                    <h1 class="mt-15 mb-40"> Dashboard </h1>
+                </div>
+                <div class="col-four probootstrap-animate fadeIn probootstrap-animated" data-animate-effect="fadeIn">
+                <div class="dash-box hover_service text-center">
+                  <div class="icon"><i class="fa fa-usd"></i></div>
+                  <div class="text">
+                    <h2>${{agentInfo['earn_amount']}}</h2>
+                    <p>Total Earned</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-four probootstrap-animate fadeIn probootstrap-animated" data-animate-effect="fadeIn">
+                <div class="dash-box hover_service text-center">
+                  <div class="icon"><i class="fa fa-female"></i></div>
+                  <div class="text">
+                    <h2>{{agentInfo['escort_count']}}</h2>
+                    <p>Total Escorts</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-four probootstrap-animate fadeIn probootstrap-animated" data-animate-effect="fadeIn">
+                <div class="dash-box hover_service text-center">
+                  <div class="icon"><i class="fa fa-female"></i></div>
+                  <div class="text">
+                    <h2>{{agentInfo['available_escort_count']}}</h2>
+                    <p>Available Escorts</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+                </div> <!-- border-box -->
+
+                </div>
+            </div>
+        </div> <!-- home-content__main -->
+
+    </section>
+      <!-- footer
+         ================================================== -->
+      <app-footer></app-footer>
+      <!-- end s-footer -->
+   </body>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>SeductX</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body id="top">
+
+  <!-- preloader
+  ================================================== -->
+  <!-- <div id="preloader">
+      <div id="loader" class="dots-jump">
+          <div></div>
+          <div></div>
+          <div></div>
+      </div>
+  </div> -->
+
+<!-- booking form -->
+
+<div class="popup" data-popup="popup-1">
+  <div class="popup-inner">
+      <div class="country-tab" id="id1" style="display: block;">
+      <h2 class="booking-title text-center text-pink mb-40">Book an Escort</h2>
+      <h4 class="text-center mt-0 mb-40"> Select your country</h4>
+      <div class="screen__container" onclick="show('id2');">
+          <a class="litem active"><div class="litem__title">Asia</div>
+              <i class="fa fa-long-arrow-right litem__icon"></i>
+          </a>
+          <a class="litem"><div class="litem__title">Germany</div>
+              <i class="fa fa-long-arrow-right litem__icon"></i>
+          </a>
+          <a class="litem"><div class="litem__title">Netherlands</div>
+              <i class="fa fa-long-arrow-right litem__icon"></i>
+          </a>
+          <a class="litem"><div class="litem__title">Spain</div>
+              <i class="fa fa-long-arrow-right litem__icon"></i>
+          </a>
+          <a class="litem"><div class="litem__title">United Kingdom</div>
+              <i class="fa fa-long-arrow-right litem__icon"></i>
+          </a>
+      </div>
+      <div class="btn-sec w-100 text-right">
+           <button class="btn btn--primary btn-next" onclick="show('id2');"> Next </button>
+      </div>
+
+  </div> <!-- country box -->
+
+  <div class="city-tab" id="id2" style="display: none;">
+      <h2 class="booking-title text-center text-pink mb-40">Book an Escort</h2>
+      <h4 class="text-center mt-0 mb-40"> Select your City</h4>
+      <div class="screen__container" onclick="show('id3');">
+          <a class="litem active"><div class="litem__title">Bangkok</div>
+              <i class="fa fa-long-arrow-right litem__icon"></i>
+          </a>
+          <a class="litem"><div class="litem__title">Manila</div>
+              <i class="fa fa-long-arrow-right litem__icon"></i>
+          </a>
+          <a class="litem"><div class="litem__title">Hong Kong</div>
+              <i class="fa fa-long-arrow-right litem__icon"></i>
+          </a>
+          <a class="litem"><div class="litem__title">Macau</div>
+              <i class="fa fa-long-arrow-right litem__icon"></i>
+          </a>
+          <a class="litem"><div class="litem__title">Singapore</div>
+              <i class="fa fa-long-arrow-right litem__icon"></i>
+          </a>
+          <a class="litem"><div class="litem__title">Kuala Lumpur</div>
+              <i class="fa fa-long-arrow-right litem__icon"></i>
+          </a>
+          <a class="litem"><div class="litem__title">Tokyo</div>
+              <i class="fa fa-long-arrow-right litem__icon"></i>
+          </a>
+
+      </div>
+      <div class="btn-sec d-flex justify-around">
+          <button class="btn btn-previous" onclick="show('id1');"> Back </button>
+           <button class="btn btn--primary btn-next" onclick="show('id3');"> Next </button>
+      </div>
+  </div> <!-- city box -->
+
+  <div id="id3" class="gender-tab" style="display: none;">
+     <h2 class="booking-title text-center text-pink mb-40">Book an Escort</h2>
+
+     <ul class="stats-tabs font-16 mt-15 mb-0 text-center pb-15">
+          <li><a href="#"><em>Bangkok</em></a></li>
+      </ul>
+
+      <h4 class="text-center mt-0 mb-40"> I would like to meet a</h4>
+      <div class="screen__container wizard-card">
+          <div class="row text-center">
+              <div class="d-inline">
+              <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="">
+                     <input type="radio" name="type" value="House">
+                         <div class="icon">
+                         <i class="material-icons"><span class="fa fa-female"> </span></i>
+                          </div>
+                           <h6>Female</h6>
+                           </div>
+                          </div>
+              <div class="d-inline">
+                  <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="">
+                      <input type="radio" name="type" value="Appartment">
+                      <div class="icon">
+                          <i class="material-icons"><span class="fa fa-venus-mars"> </span></i>
+                      </div>
+                      <h6>Transsexual</h6>
+                  </div>
+              </div>
+          </div>
+</div>
+      <div class="btn-sec d-flex justify-around">
+          <button class="btn btn-previous" onclick="show('id2');"> Back </button>
+           <button class="btn btn--primary btn-next" onclick="show('id4');"> Next </button>
+      </div>
+  </div> <!-- gender-tab -->
+
+
+  <div id="id4" class="call-tab" style="display: none;">
+     <h2 class="booking-title text-center text-pink mb-40">Book an Escort</h2>
+     <ul class="stats-tabs font-16 mt-15 mb-0 text-center">
+          <li><a href="#"><em>Bangkok </em></a></li>
+          <li><a href="#"><em>Female </em></a></li>
+      </ul>
+      <h4 class="text-center mt-0 mb-40"> In or Outcall?</h4>
+      <div class="screen__container wizard-card">
+          <div class="row text-center">
+              <div class="d-inline">
+              <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="">
+                     <input type="radio" name="type" value="House">
+                         <div class="icon">
+                         <i class="material-icons"><span class="fa fa-female"> </span></i>
+                          </div>
+                           <h6>Outcall</h6>
+                            <p class="small grey-txt"> (She comes to you)</p>
+                           </div>
+                          </div>
+              <div class="d-inline">
+                  <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="">
+                      <input type="radio" name="type" value="Appartment">
+                      <div class="icon">
+                          <i class="material-icons"><i class="fa fa-male"></i></i>
+                      </div>
+                      <h6>Incall</h6>
+                       <p class="small grey-txt"> (You go to her)</p>
+                  </div>
+              </div>
+          </div>
+</div>
+
+     <div class="btn-sec d-flex justify-around">
+          <button class="btn btn-previous" onclick="show('id3');"> Back </button>
+           <button class="btn btn--primary btn-next" onclick="show('id5');"> Next </button>
+      </div>
+  </div>
+  <div id="id5" class="day-tab" style="display: none;">
+     <h2 class="booking-title text-center text-pink mb-40">Book an Escort</h2>
+     <ul class="stats-tabs font-16 mt-15 mb-0 text-center">
+          <li><a href="#"><em>Bangkok </em></a></li>
+          <li><a href="#"><em>Female </em></a></li>
+          <li><a href="#"><em>Outcall </em></a></li>
+      </ul>
+      <h4 class="text-center mt-0 mb-40"> I would like to meet at</h4>
+      <div class="screen__container wizard-card">
+          <div class="form-group label-floating d-flex justify-center">
+                                                <div class="minus-btn"><i class="fa fa-minus"></i></div>
+                                                <div class="left-time">09:15</div>
+                                                <div class="right-time">
+                                                  <p><span>AM</span></p>
+                                                  <p>PM</p>
+                                                </div>
+                                                <div class="plus-btn"><i class="fa fa-plus"></i></div>
+                                              </div>
+      </div>
+     <div class="btn-sec d-flex justify-around">
+          <button class="btn btn-previous" onclick="show('id4');"> Back </button>
+           <button class="btn btn--primary btn-next" onclick="show('id6');"> Next </button>
+      </div>
+  </div> <!-- day tab -->
+  <div id="id6" class="time-tab" style="display: none;">
+     <h2 class="booking-title text-center text-pink mb-40">Book an Escort</h2>
+     <ul class="stats-tabs font-16 mt-15 mb-0 text-center">
+          <li><a href="#"><em>Bangkok </em></a></li>
+          <li><a href="#"><em>Female </em></a></li>
+          <li><a href="#"><em>Outcall </em></a></li>
+          <li><a href="#"><em>10:15 PM </em></a></li>
+      </ul>
+      <h4 class="text-center mt-0 mb-40"> I would like to book for</h4>
+      <div class="screen__container wizard-card">
+          <div class="form-group label-floating d-flex justify-center">
+                                                <div class="minus-btn"><i class="fa fa-minus"></i></div>
+                                                <div class="left-time">02</div>
+                                                <div class="right-time">
+                                                  <p> Hours</p>
+                                                </div>
+                                                <div class="plus-btn"><i class="fa fa-plus"></i></div>
+                                              </div>
+      </div>
+      <div class="btn-sec d-flex justify-around">
+          <button class="btn btn-previous" onclick="show('id5');"> Back </button>
+          <a href="search.html"><button class="btn btn--primary btn-next"> Search </button></a>
+      </div>
+  </div>
+
+
+  </div>
+    <div class="logo-fix"><a routerLink="/"><img src="assets/images/logo_black.png" class="img-responsive"></a></div>
+  <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+</div>
+<!-- booking form -->
+  <!-- header
+  ================================================== -->
+    <app-navigation></app-navigation>
+  <!-- end header -->
+
+
+  <!-- home
+  ================================================== -->
+  <section id="" class="s-home mini-slide search-bg">
+
+      <div class="shadow-overlay"></div>
+          <div class="row home-content__main">
+              <div class="col-twelve text-center mb-40">
+                  <h1>
+                      Become a SeductX Escort
+                  </h1>
+                  <p class="text-white"> 4,000s of verified clients and no booking fees </p>
+                  <div class="item-plan__bottom-part">
+                      <a class="btn btn--primary large mb-0" href="escort-signup.html"> Signup Now</a>
+                  </div>
+
+              </div> <!-- end home-content__left-->
+
+      </div> <!-- end home-content -->
+
+  </section> <!-- end s-home -->
+
+<section id="features" class="s-features white-bg target-section">
+
+      <div class="row section-header has-bottom-sep" >
+          <div class="col-full">
+              <h1 class="display-2">
+                 Who we are?
+              </h1>
+              <p class="lead">
+                  SeductX is an Escort directory where clients search Escorts who are online and can make instant, no-nonsense bookings. SeductX Escorts are sent live bookings from verified clients, which you simply accept or reject at one tap. SeductX is real and it works. No chat, no negotiations, just genuine clients and genuine bookings for genuine escorts.
+              </p>
+          </div>
+      </div> <!-- end section-header -->
+      <div class="row">
+         <div class="col-full video-bg video-space" >
+
+              <div class="shadow-overlay"></div>
+
+              <a class="btn-video" href="https://player.vimeo.com/video/185544475?color=ffffff&portrait=0" data-lity>
+                  <span class="video-icon"></span>
+              </a>
+
+              <div class="stats">
+                  <div class="item-stats">
+                      <span class="item-stats__title">
+                          Watch the video
+                      </span>
+                  </div> <!-- end item-stats -->
+              </div>
+         </div> <!-- end video-bg -->
+      </div>
+
+      <div class="row process-wrap">
+
+          <h2 class="display-2 text-center" >How SeductX works?</h2>
+
+          <div class="process process-half" >
+
+              <div class="process__steps block-1-2 block-tab-full group">
+
+                  <div class="col-block step">
+                      <h3 class="item-title">Registration</h3>
+                      <p>Register with SeductX in seconds, all you need is an active mobile number.
+                      </p>
+                  </div>
+
+                  <div class="col-block step">
+                       <h3 class="item-title">Add your details</h3>
+                      <p>Fill in your stats and services, set your rates, and you are ready to take bookings!
+                      </p>
+                  </div>
+
+                  <div class="col-block step">
+                      <h3 class="item-title">Booking request </h3>
+                      <p>Go live at the touch of a button and choose which bookings you accept and reject.</p>
+                  </div>
+
+                  <div class="col-block step">
+                      <h3 class="item-title">Client details</h3>
+                      <p>See extra client info: if they are new or regular, free or premium, trusted or unverified.
+                      </p>
+                  </div>
+
+                  <div class="col-block step">
+                      <h3 class="item-title">Tracking on mobile</h3>
+                      <p>See your client’s location on the map and make direct contact via phone and SMS.
+                      </p>
+                  </div>
+                  <div class="col-block step">
+                      <h3 class="item-title">Rate your client</h3>
+                      <p>Once your booking is over you can rate your client and get your next booking!
+                      </p>
+                  </div>
+
+              </div> <!-- end process__steps -->
+         </div> <!-- end process -->
+      </div> <!-- end about-how -->
+</section>
+      <section id="" class="s-home mini-slide signup-banner escort-banner">
+      <div class="shadow-overlay"></div>
+          <div class="row home-content__main">
+              <div class="col-twelve text-center mb-40">
+                  <h1>
+                  We have 1200+ registered escorts
+                  </h1>
+                  <p class="text-white"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+              </div> <!-- end home-content__left-->
+
+      </div> <!-- end home-content -->
+</section>
+
+<section id="pricing" class="s-pricing target-section">
+
+      <div class="row section-header align-center" >
+          <div class="col-full">
+              <h1 class="display-2">
+                 How does we make money
+              </h1>
+
+          </div>
+      </div> <!-- end section-header -->
+
+      <div class="row plans block-full">
+          <div class="gutter-none">
+          <div class="col-block item-plan mb-40" >
+                  <h3 class="mt-0"><i class="fa fa-check purple-icon"></i>  Free Booking</h3>
+                  <p>Clients pay SeductX escorts direct and you keep all the money (we don’t take any fee or cut of your booking payment). </p>
+
+                      <p> Then how do we make money?</p>
+                  <div class="item-plan__bottom-part">
+
+                      <a class="btn btn--primary large mb-0" href="#0">Advertise Now</a>
+                  </div>
+
+          </div> <!-- end item-plan -->
+
+          <div class="col-block item-plan" >
+                  <h3 class="mt-0"><i class="fa fa-female purple-icon"></i> Become a Premium Escort</h3>
+                  <p>  Clients and Escorts can pay a small fee for premium services. BUT if you don’t wish to be a premium member you can use our servies and still get SeductX clients totally for free!</p>
+
+<p> By becoming a Premium Escort you can take unlimited bookings and will not receive any restrictions for low response rates. </p>
+
+<p>You also get additional client info when receiving bookings: see if they are a new or regular clients, a premium member, and whether they have had any warnings. </p>
+
+<p>You can buy premium membership with low one-off payments (no-repeat billing). </p>
+                  <div class="item-plan__bottom-part">
+
+                      <a class="btn btn--primary large mb-0" href="#0">Premium Escorts</a>
+                  </div>
+
+          </div> <!-- end item-plan -->
+
+          </div> <!-- gutter none -->
+
+      </div> <!-- end plans -->
+
+  </section> <!-- end s-pricing -->
+
+  <section id="" class="s-home mini-slide agency-banner">
+
+      <div class="shadow-overlay"></div>
+          <div class="row home-content__main">
+              <div class="col-twelve text-center mb-40">
+                  <h1>
+                  Introducing SeductX for Agencies
+                  </h1>
+                  <p class="text-white"> Dashboard, real-time tracking of staff and more. </p>
+
+                   <div class="item-plan__bottom-part">
+                      <a class="btn btn--primary large mb-0" href="#0">I am a agency</a>
+                  </div>
+
+              </div> <!-- end home-content__left-->
+
+      </div> <!-- end home-content -->
+
+  </section>
+
+<!-- download
+  ================================================== -->
+  <section id="download" class="s-download target-section">
+
+      <div class="row section-header align-center" >
+          <div class="col-full">
+              <h1 class="display-2">
+                  Download SeductX App Now!.
+              </h1>
+              <p class="lead">
+                  Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est.
+                  Ut quis enim rerum quia assumenda repudiandae non cumque qui. Amet repellat
+                  omnis ea.
+              </p>
+          </div>
+      </div> <!-- end section-header -->
+
+      <div class="row">
+          <div class="col-full text-center">
+              <ul class="download-badges" >
+                  <li><a href="" title="" class="badge-appstore">App Store</a></li>
+                  <li><a href="" title="" class="badge-googleplay">Play Store</a></li>
+              </ul>
+          </div>
+      </div>
+
+      <div class="row download-bottom-image" >
+          <img src="assets/images/app.png" class="img-responsive">
+      </div>
+
+  </section> <!-- end s-download -->
+
+  <!-- footer
+  ================================================== -->
+  <app-footer></app-footer>
+   <!-- end s-footer -->
+</body>

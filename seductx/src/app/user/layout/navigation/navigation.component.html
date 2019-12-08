@@ -1,0 +1,29 @@
+<header class="s-header profile-sticky">
+  <div class="row">
+    <div class="header-logo">
+        <a class="site-logo" routerLink="/">
+            <img src="assets/images/logo.png" alt="Homepage">
+        </a>
+    </div>
+    <nav class="header-nav-wrap"  [ngClass]="{'mobile': active}">
+        <ul class="header-main-nav">
+            <li routerLinkActive="current"><a  routerLink="/user/profile">Personal details</a></li>
+            <li routerLinkActive="current"><a  routerLink="/user/changepassword">Change password</a></li>
+            <li routerLinkActive="current"><a  routerLink="/user/bookinghistory" >Booking history</a></li>
+        </ul>
+
+        <div class="header-cta">
+            <a routerLink="/user/filtercountry" class="btn btn--primary header-cta__btn mr-20">Book an Escort</a>
+            <div class="dropdown">
+                <li  class="dropdown" appDropdown><span class="drop-btn" >{{email}} <span class="fa fa-chevron-down small"></span></span>
+                  <div class="dropdown-content current">
+                    <a (click) = "onLogout()">Logout</a>
+                  </div>
+                </li>
+              </div>
+        </div>
+    </nav>
+    <a class="header-menu-toggle" (click)="toggleClass()"
+    [ngClass]="{'is-clicked': active}" href="javascript:void(0)"><span>Menu</span></a>
+  </div>
+</header>

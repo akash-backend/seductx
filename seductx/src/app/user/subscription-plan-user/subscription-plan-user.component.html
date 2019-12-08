@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+   <head>
+      <!--- basic page needs
+         ================================================== -->
+      <meta charset="utf-8">
+      <title>SeductX</title>
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- mobile specific metas
+         ================================================== -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- CSS
+         ================================================== -->
+      <!-- script
+         ================================================== -->
+   </head>
+   <body id="top">
+      <!-- preloader
+         ================================================== -->
+      <!-- <div id="preloader">
+         <div id="loader" class="dots-jump">
+             <div></div>
+             <div></div>
+             <div></div>
+         </div>
+         </div> -->
+      <!-- cancel form -->
+      <div class="popup" data-popup="popup-2">
+         <div class="popup-inner">
+            <div class="cancel-box">
+               <h2 class="booking-title text-center text-pink mb-40">What is the reason of cancelling?</h2>
+               <div class="screen__container">
+                  <label class="radio-item">Client did not respond after i arrived
+                  <input type="radio" checked="checked" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">I am not available
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Location is too far
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Unable to verify/check client
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">This is duplicate booking
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Unable to contact client
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Cannot accommodate extra request(s)
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Client cancelled before i arrived
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Client cancelled after i arrived
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Other
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+               </div>
+               <div class="btn-sec d-flex justify-around">
+                  <button class="btn btn-previous" data-popup-close="popup-2"> Abort </button>
+                  <a href=""><button class="btn btn--primary btn-next" data-popup-close="popup-2"> Ok </button></a>
+               </div>
+            </div>
+         </div>
+         <a class="popup-close" data-popup-close="popup-2" href="#">x</a>
+      </div>
+      <!-- cancel form -->
+      <!-- support form -->
+      <div class="popup" data-popup="popup-3">
+         <div class="popup-inner">
+            <div class="cancel-box">
+               <h2 class="booking-title text-center text-pink mb-40"> Send your message</h2>
+               <div class="screen__container">
+                  <label for="">Your message</label>
+                  <textarea class="full-width" id="" rows="8" placeholder="comment here..">
+                  </textarea>
+               </div>
+               <div class="btn-sec d-flex justify-around">
+                  <button class="btn btn-previous" data-popup-close="popup-3"> Cancel </button>
+                  <a href=""><button type="Submit" class="btn btn--primary btn-next" data-popup-close="popup-3"> Submit </button></a>
+               </div>
+            </div>
+         </div>
+         <a class="popup-close" data-popup-close="popup-3" href="#">x</a>
+      </div>
+      <!-- support form -->
+      <!-- header
+         ================================================== -->
+            <app-navigation></app-navigation>
+      <!-- end header -->
+      <!-- home
+         ================================================== -->
+      <section id="" class="s-home mini-slide search-bg">
+
+          <div class="shadow-overlay"></div>
+              <div class="row home-content__main">
+                  <div class="col-twelve text-center mb-40">
+                      <h1><i class="fa fa-check-circle small green-txt"></i> Buy Premium Subscription </h1>
+                  <p class="text-white"> Your are not premium user </p>
+                  </div> <!--twelve-->
+
+          </div> <!-- end home-content -->
+          <div class="login-icon"> <i class="fa fa-chevron-down"></i> </div>
+
+      </section> <!-- end s-home -->
+
+      <!-- end s-home -->
+      <section id="features" class="s-features search escort">
+
+        <div class="escort-rate-box">
+
+<!--                     <div class="text-center">
+                        <h3> Sign Up </h3>
+                    </div> -->
+                    <div class="gutter-none">
+                        <div class="col-twelve">
+                        <div class="call-tab white-bg rate-box-shadow">
+
+                        <div class="tab">
+                         <h5 class="p-15 mt-0 mb-0"> Our subscription plans </h5>
+                        </div>
+
+                        <div id="incall" class="tabcontent active">
+                          <div class="table-responsive center-table">
+
+                        <table>
+                            <thead>
+                                <th> <strong>Duration </strong> </th>
+                                <th> <strong>Price </strong> </th>
+                                <th> <strong></strong> </th>
+                            </thead>
+
+                                <tbody>
+                                <tr *ngFor="let planData of subscriptionPlan">
+                                    <td>{{planData.name}}</td>
+                                    <td class="text-pink"><Strong> ${{planData.amount}} </Strong></td>
+                                    <td><a type="button" class="btn btn-previous select-btn" (click)="onClick(planData.plan_id,planData.amount)" [ngClass]="{active: isActive(planData.plan_id)}"><strong> Select </strong></a></td>
+                                  </tr>
+                           </tbody>
+                       </table>
+                   </div>
+                        </div>
+
+                    </div>
+                    <button  class="btn btn--primary full-width mt-15" (click)="onSave()"> Subscribe Now </button>
+                  </div>
+
+
+
+
+
+        </div>
+
+        </div>
+    </section>
+      <!-- footer
+         ================================================== -->
+      <app-footer></app-footer>
+      <!-- end s-footer -->
+   </body>

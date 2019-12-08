@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>SeductX</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+
+    <!-- script
+    ================================================== -->
+
+</head>
+
+<body id="top">
+
+    <!-- preloader
+    ================================================== -->
+    <!-- <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> -->
+
+
+<!-- booking form -->
+    <div class="popup-inner">
+         <div class="logo-fix"><a href="#" routerLink="/user/profile"><img src="assets/images/logo_black.png" class="img-responsive"></a></div>
+    <a class="popup-close" data-popup-close="popup-1" href="#" routerLink="/user/searchonline">x</a>
+
+    <div id="id6" class="time-tab mt-60px">
+       <h2 class="booking-title text-center text-pink mb-40">Cofirm your booking</h2>
+       <ul class="stats-tabs font-16 mt-15 mb-0 text-center">
+            <li><a href="#"><em>{{city}} </em></a></li>
+            <li><a href="#"><em>{{gender}} </em></a></li>
+            <li><a href="#"><em>{{call}} </em></a></li>
+            <li><a href="#"><em>{{time| date:'h:mm a'}}</em></a></li>
+            <li><a href="#"><em>{{hour}}h </em></a></li>
+        </ul>
+         <h4 class="text-center mt-0"><i class="fa fa-check green-txt"></i> You've chosen <span class="text-pink">{{userName}}</span></h4>
+
+
+        <p> Please give us a few details in order to confirm your booking. (Your details are encrypted over a secure connection).</p>
+        <form [formGroup]="form" (submit)="onSaveBooking()">
+        <div class="screen__container wizard-card">
+
+
+                    <div>
+                            <label for="">Your name</label>
+                            <input class="full-width" type="text" formControlName="userName">
+                            <P class="error_form" *ngIf="form.get('userName').invalid">Please enter user name.</P>
+                    </div>
+                    <div>
+                            <label for="">Email address</label>
+                            <input class="full-width" type="email" formControlName="userEmail">
+                            <P class="error_form" *ngIf="form.get('userEmail').invalid">Please enter user email.</P>
+                    </div>
+                    <div>
+                            <label for="">Hotel and condo</label>
+                            <input class="full-width" type="text" formControlName="hotel">
+                            <P class="error_form" *ngIf="form.get('hotel').invalid">Please enter hotel.</P>
+                    </div>
+                    <div>
+                            <label for="">Room number</label>
+                            <input class="full-width" type="number" formControlName="roomNo">
+                            <P class="error_form" *ngIf="form.get('roomNo').invalid">Please enter room no.</P>
+                    </div>
+
+                    <div>
+                      <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" formControlName="address" #search>
+                      <P class="error_form" *ngIf="form.get('address').invalid">Please enter a address.</P>
+                    </div>
+
+                    <div>
+                      <label for="">Map</label>
+                      <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" >
+                          <agm-marker
+                          [latitude]="latitude"
+                          [longitude]="longitude"></agm-marker>
+                      </agm-map>
+                    </div>
+
+                    <div>
+                           <label for="">Special request</label>
+                           <textarea class="full-width" rows="2" id="" placeholder="Specific uniform.." formControlName="specialRequest">
+                           </textarea>
+                           <P class="error_form" *ngIf="form.get('specialRequest').invalid">Please enter special Request.</P>
+                    </div>
+                    <ul class="stats-tabs font-16 mt-15 mb-0 ">
+                    <li><a href="#">{{gender}} <em>Gender</em></a></li>
+                    <li><a href="#">{{hour}}h <em>Time</em></a></li>
+                    <li><a href="#">{{this.price | currency : 'AUD' : true : '4.0' }}<em>Total payment</em></a></li>
+                </ul>
+                    <div>
+                    	<p>By confirming this booking you are agreeing to our <a href="">terms & conditions</a>.</p>
+                    </div>
+        </div>
+        <div class="btn-sec d-flex justify-around">
+            <a  class="btn btn-previous"  routerLink="/user/searchonline">Cancel</a>
+            <button class="btn btn--primary btn-next" type="submit"> Confirm booking </button>
+        </div>
+      </form>
+    </div>
+    </div>
+</body>

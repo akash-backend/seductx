@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>SeductX</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+
+
+    <!-- script
+    ================================================== -->
+</head>
+
+<body id="top">
+
+    <!-- preloader
+    ================================================== -->
+    <!-- <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> -->
+
+
+    <!-- header
+    ================================================== -->
+        <app-navigation></app-navigation>
+    <!-- end header -->
+
+    <section id="features" class="s-features search escort mt-15 mt-md-50rspn">
+    <div class="row px-sm-rspns-18">
+        <div class="gutter-none">
+            <div class="col-twelve text-center-md text-center-md"><h3 class="mb text-black"> My Account  </h3></div>
+            <app-sidebar></app-sidebar>
+
+            <div class="col-eight w-md-100rspn">
+
+                <div class="border-box mb-sm-rspn-0 p-30 position-relative h-440 mt-md-rspn-0">
+                <div class="profile-slide">
+
+                <div class="custom-tab">
+                    <nav>
+                        <div class="nav nav-tabs tb-scrl-r-rsnps" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link" routerLinkActive="active" routerLink="/user/profile">Personal details</a>
+                            <a class="nav-item nav-link" routerLinkActive="active" routerLink="/user/changepassword">Change password</a>
+                            <a class="nav-item nav-link" routerLinkActive="active" routerLink="/user/bookinghistory">Booking history</a>
+                        </div>
+                    </nav>
+                </div>
+                </div>
+                <mat-spinner *ngIf="isLoading"></mat-spinner>
+                <div *ngIf="requests.length > 0 && !isLoading">
+                <div class="mb-20" *ngFor="let request of requests">
+                <div class="d-flex justify-around align-items-center">
+                    <div>
+                        <h5><i class="fa fa-calendar pink-color mr-10 "></i> {{request.booking_date}}</h5>
+                    </div>
+                    <div class="mt-30px-600"><a href="javascript:void(0);" (click) = "onDelete(request.booking_id)"> <i class="fa fa-trash mr-10"></i></a> </div>
+                </div>
+                <div class="table-responsive light-bg pt-80 p-15 position-relative cstm-table-rspn">
+                    <table>
+                            <tbody>
+                            <tr>
+                                <td><strong><i class="fa fa-file grey-txt mr-10"></i> Status</strong></td>
+                                <td><span class="green-txt" *ngIf="request.request_status == '0'"><i class="fa fa-check"></i> Pending</span>
+                                  <span class="green-txt" *ngIf="request.request_status == '1'"><i class="fa fa-check"></i> Accepted</span>
+                                  <span class="red-txt" *ngIf="request.request_status == '2'"><i class="fa fa-times"></i> Canceled</span>
+                                  <span class="green-txt" *ngIf="request.request_status == '3'"><i class="fa fa-check"></i> Started</span>
+                                  <span class="green-txt" *ngIf="request.request_status == '4'"><i class="fa fa-check"></i> Completed</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong><i class="fa fa-user grey-txt mr-10"></i>Escort Name </strong></td>
+                                <td>{{request.escort_first_name}} {{request.escort_last_name}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong><i class="fa fa-credit-card grey-txt mr-10"></i>Rate </strong></td>
+                                <td>{{request.total_amount | currency : 'AUD' : true : '4.0'}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong><i class="fa fa-stopwatch grey-txt mr-10"></i>Duration </strong></td>
+                                <td>{{request.hour_time}} hours</td>
+                            </tr>
+                            <tr>
+                                <td><strong><i class="fa fa-map-marker grey-txt mr-10"></i> Location </strong></td>
+                                <td>{{request.booking_location}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong><i class="fa fa-home grey-txt mr-10"></i> Room number </strong></td>
+                                <td>{{request.room_no}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong><i class="fa fa-phone grey-txt mr-10"></i> Escort number </strong></td>
+                                <td> +{{request.escort_country_code}}{{request.escort_phone_number}} </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong> <i class="fa fa-clipboard-list grey-txt mr-10"></i>Provided Services  </strong></td>
+                                <td>
+                                    <span class="badge active" *ngFor="let service of request.services">{{service.title}}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong><i class="fa fa-credit-card grey-txt mr-10"></i> Total Payment </strong></td>
+                                <td> <span class="pink-color"><strong> {{request.total_amount | currency : 'AUD' : true : '4.0'}}</strong></span> </td>
+                            </tr>
+
+                            </tbody>
+                    </table>
+                    <div class="share-box">
+                      <ul class="inline-list">
+                        <li *ngIf="(request.request_status == '1' || request.request_status == '3') && subscriptionStatus == '1'">
+                          <a  [routerLink]="['/user/userChat', request.escort_id]">
+                            <i class="fa fa-comments"></i>
+                          </a>
+                        </li>
+                        <li *ngIf="(request.request_status == '1' || request.request_status == '3') && subscriptionStatus == '1'">
+                          <a href="javascript:void(0)" (click)="videoCall(request.booking_id, request.escort_id)">
+                            <i class="fa fa-video"></i>
+                          </a>
+                        </li>
+                        <li *ngIf="request.request_status == '1' || request.request_status == '3'">
+                          <a href="javascript:void(0)" (click)="openModal(template,request.escort_id)">
+                            <i class="fa fa-star text-white"></i>
+                          </a>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+            </div> <!-- history sec  -->
+
+          </div>
+          <h2  *ngIf="requests.length <= 0 && !isLoading">No Data Available!</h2>
+            <mat-paginator [length]="totalRequests" [pageSize]="requestsPerPage"  (page)="onChangedPage($event)"
+            *ngIf="requests.length > 0"></mat-paginator>
+            </div> <!-- border-box -->
+
+            </div>
+        </div>
+    </div> <!-- home-content__main -->
+
+    </section>
+
+    <!-- footer
+    ================================================== -->
+    <app-footer></app-footer>
+    <!-- end s-footer -->
+
+
+    <ng-template #template>
+      <div class="modal-header">
+         <h4 class="modal-title pull-left mt-0">Ratting</h4>
+         <button type="button" class="close pull-right" aria-label="close" (click)="modalRef.hide()">
+         <i class="fa fa-times" aria-hidden="true"></i>
+         </button>
+      </div>
+      <div class="modal-body px-4">
+          <div class="yellow-rate">
+          <p class="text-center mt-5">
+            <ngb-rating [(rate)]="currentRate"  max="5"></ngb-rating>
+          </p>
+      </div>
+         <div class="row">
+            <div class="col-six text-center mt-5">
+               <button _ngcontent-trd-c1="" class="btn btn-success full-width" data-dismiss="modal" (click)="addRatting()"> Yes </button>
+            </div>
+            <div class="col-six text-center mt-5">
+               <button _ngcontent-myi-c1="" class="btn btn-previous red-border full-width" data-dismiss="modal" (click)="modalRef.hide()"> No </button>
+            </div>
+         </div>
+      </div>
+   </ng-template>
+</body>

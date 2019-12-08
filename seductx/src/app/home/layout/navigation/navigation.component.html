@@ -1,0 +1,29 @@
+<header class="s-header">
+
+        <div class="row">
+            <div class="header-logo">
+                <a class="site-logo" routerLink="/">
+                    <img src="assets/images/logo.png" alt="Homepage">
+                </a>
+            </div>
+
+            <nav class="header-nav-wrap" [ngClass]="{'mobile': active}">
+                <ul class="header-main-nav">
+                  <li routerLinkActive="current"><a  title="intro" routerLink="/home/signup">Premium Clients</a></li>
+                  <li routerLinkActive="current"><a routerLink="/home/escortsignup">Become an Escort</a></li>
+                  <li routerLinkActive="current"><a class="" routerLink="/home/contact">Contact</a></li>
+                  <li routerLinkActive="current" ><a routerLink="/home/login">Login</a></li>
+                  <li routerLinkActive="current"><a class="" routerLink="/home/escortLogin">Escort Login</a></li>
+                  <li routerLinkActive="current"><a class="" routerLink="/home/agentLogin">Agent Login</a></li>
+                </ul>
+
+                <div class="header-cta">
+                    <a href="" class="btn btn--primary header-cta__btn" data-popup-open="popup-1">Book an Escort</a>
+                </div>
+            </nav> <!-- end header-nav-wrap -->
+
+            <a class="header-menu-toggle" (click)="toggleClass()"
+            [ngClass]="{'is-clicked': active}" href="javascript:void(0)"><span>Menu</span></a>
+        </div>
+
+    </header>

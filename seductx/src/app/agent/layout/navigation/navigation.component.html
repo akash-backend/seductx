@@ -1,0 +1,30 @@
+<header class="s-header">
+  <div class="row">
+    <div class="header-logo">
+      <a class="site-logo" routerLink="/">
+          <img src="assets/images/logo.png" alt="Homepage">
+      </a>
+    </div>
+
+    <nav class="header-nav-wrap" [ngClass]="{'mobile': active}">
+      <ul class="header-main-nav">
+          <li routerLinkActive="current"><a routerLink="/agent/agentdashboard"> Dashboard</a></li>
+          <li routerLinkActive="current"><a routerLink="/agent/agentEscortList">Escorts</a></li>
+      </ul>
+
+      <div class="header-cta">
+        <div class="dropdown">
+          <li  class="dropdown" appDropdown><span class="drop-btn" >{{email}} <span class="fa fa-chevron-down small"></span></span>
+            <div class="dropdown-content current">
+              <a (click) = "onLogout()">Logout</a>
+            </div>
+          </li>
+        </div>
+
+      </div>
+    </nav>
+
+    <a class="header-menu-toggle" (click)="toggleClass()"
+    [ngClass]="{'is-clicked': active}" href="javascript:void(0)"><span>Menu</span></a>
+  </div>
+</header>

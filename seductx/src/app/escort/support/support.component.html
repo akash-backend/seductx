@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>SeductX</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+
+    <!-- script
+    ================================================== -->
+
+
+</head>
+
+<body id="top" style="background-color: #ffffff">
+
+    <!-- preloader
+    ================================================== -->
+    <!-- <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> -->
+
+
+<!-- booking form -->
+    <div class="popup-inner">
+         <div class="logo-fix"><a routerLink="/"><img src="assets/images/logo_black.png" class="img-responsive"></a></div>
+    <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+
+    <div id="id4" class="call-tab pt-md-rspn-60">
+      <h2 class="booking-title text-center text-pink mb-40"> Send your message</h2>
+        <div class="screen__container">
+          <label for="">Your message</label>
+          <textarea class="full-width" id="" rows="8" placeholder="comment here.." [(ngModel)]="comment">
+          </textarea>
+        </div>
+        <div class="btn-sec d-flex justify-around">
+            <a routerLink="/" class="btn btn-previous" data-popup-close="popup-3"> Cancel </a>
+            <button class="btn btn--primary btn-next" data-popup-close="popup-3" (click)="onSave()"> Submit </button>
+        </div>
+    </div>
+    </div>
+</body>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>SeductX</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+
+    <!-- script
+    ================================================== -->
+
+</head>
+
+<body id="top" style="background-color: #ffffff">
+
+    <!-- preloader
+    ================================================== -->
+    <!-- <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> -->
+
+
+<!-- booking form -->
+    <div class="popup-inner">
+         <div class="logo-fix"><a routerLink="/"><img src="assets/images/logo_black.png" class="img-responsive"></a></div>
+    <a class="popup-close" data-popup-close="popup-1" routerLink="/user/searchonline">x</a>
+
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form [formGroup]="form" (submit)="onSave()" *ngIf="!isLoading">
+    <div id="id3" class="gender-tab mt-60px">
+        <h2 class="booking-title text-center text-pink mb-40">Filter</h2>
+             <div class="screen__container">
+             <div class="col-twelve">
+                         <label for="">Agency</label>
+                             <div class="ss-custom-select" *ngIf="agent_list">
+                             <select class="full-width" id="sampleRecipientInput" formControlName="agent">
+                                 <option selected="" value="">Any agency</option>
+                                 <option *ngFor="let agentData of agent_list" [value]="agentData.agent_id">{{agentData.agency_name}}</option>
+                             </select>
+                 </div>
+             </div> <!-- col-twelve -->
+
+             <div class="col-twelve">
+                         <label for="">Age</label>
+                             <div class="ss-custom-select">
+                             <select class="full-width" formControlName="age">
+                                 <option value="any">Any age</option>
+                                 <option value="18-23">18-23</option>
+                                 <option value="24-29">24-29</option>
+                                 <option value="30-35">30-35</option>
+                                 <option value="greater_then-35">35+</option>
+                             </select>
+                 </div>
+                 <P class="error_form" *ngIf="form.get('age').invalid">Please enter a Age.</P>
+             </div> <!-- col-twelve -->
+
+             <div class="col-twelve">
+                         <label for="">Height</label>
+                             <div class="ss-custom-select">
+                             <select class="full-width" formControlName="height">
+                                 <option value="any">Any height</option>
+                                 <option value="less_then-156">Short (< 156cm)</option>
+                                 <option value="156-165">Average (156cm-165cm)</option>
+                                 <option value="greater_then-165">Tall (> 165cm)</option>
+                             </select>
+                 </div>
+                 <P class="error_form" *ngIf="form.get('height').invalid">Please enter a height.</P>
+             </div> <!-- col-twelve -->
+
+             <div class="col-twelve">
+                <label for="">Body type</label>
+                  <div class="ss-custom-select" *ngIf="body_type_list">
+                    <select class="full-width" formControlName="body_type">
+                        <option value="any">Any body type</option>
+                        <option *ngFor="let body_type_data of body_type_list" [value]="body_type_data.body_type_id">{{body_type_data.name}}</option>
+                    </select>
+                  </div>
+                <P class="error_form" *ngIf="form.get('body_type').invalid">Please enter a Body Type.</P>
+             </div> <!-- col-twelve -->
+
+             <div class="col-twelve">
+                         <label for="">Cup size</label>
+                            <div class="ss-custom-select"  *ngIf="cup_size_list">
+                             <select class="full-width" formControlName="cup_size">
+                                <option selected="" disabled="" value="">Pick cup size</option>
+                                <option *ngFor="let cup_size_data of cup_size_list" [value]="cup_size_data.cup_size_id">{{cup_size_data.size}}</option>
+                             </select>
+                            </div>
+                 <P class="error_form" *ngIf="form.get('cup_size').invalid">Please enter a Cup Size.</P>
+             </div> <!-- col-twelve -->
+
+             <div class="text-center">
+                         <h3 class="mb-40 text-black"> Services  </h3>
+                     </div>
+                     <div class="gutter-none">
+                         <div class="col-six" *ngFor="let service of service_info; let i = index;">
+                             <div class="list-box d-flex justify-around">
+                                 <div>
+                                     <label for="" class="mini-label">{{service.title}}</label>
+                                     <p class="small"> {{service.description}} </p>
+                                 </div>
+                                 <div>
+                                 <input class="styled-checkbox" id="styled-checkbox-{{i}}" type="checkbox" [value]="service.services_id" (change)="onCheck($event,service.services_id)">
+                                 <label for="styled-checkbox-{{i}}"></label>
+                                 </div>
+                             </div>
+                         </div>
+                     </div> <!-- gutter none -->
+
+
+
+
+
+             <div class="col-twelve">
+         <div class="btn-sec d-flex justify-around">
+             <a class="btn btn-previous" data-popup-close="popup-4" routerLink="/user/searchonline"> Cancel </a>
+             <button type="submit" class="btn btn--primary btn-next" data-popup-close="popup-4"> Search </button>
+         </div>
+     </div>
+     </div>
+
+
+    </div> <!-- gender-tab -->
+    </form>
+    </div>
+</body>

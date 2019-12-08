@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+   <head>
+      <!--- basic page needs
+         ================================================== -->
+      <meta charset="utf-8">
+      <title>SeductX</title>
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- mobile specific metas
+         ================================================== -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- CSS
+         ================================================== -->
+      <!-- script
+         ================================================== -->
+   </head>
+   <body id="top">
+      <!-- preloader
+         ================================================== -->
+      <!-- <div id="preloader">
+         <div id="loader" class="dots-jump">
+             <div></div>
+             <div></div>
+             <div></div>
+         </div>
+         </div> -->
+      <!-- cancel form -->
+      <div class="popup" data-popup="popup-2">
+         <div class="popup-inner">
+            <div class="cancel-box">
+               <h2 class="booking-title text-center text-pink mb-40">What is the reason of cancelling?</h2>
+               <div class="screen__container">
+                  <label class="radio-item">Client did not respond after i arrived
+                  <input type="radio" checked="checked" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">I am not available
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Location is too far
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Unable to verify/check client
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">This is duplicate booking
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Unable to contact client
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Cannot accommodate extra request(s)
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Client cancelled before i arrived
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Client cancelled after i arrived
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-item">Other
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                  </label>
+               </div>
+               <div class="btn-sec d-flex justify-around">
+                  <button class="btn btn-previous" data-popup-close="popup-2"> Abort </button>
+                  <a href=""><button class="btn btn--primary btn-next" data-popup-close="popup-2"> Ok </button></a>
+               </div>
+            </div>
+         </div>
+         <a class="popup-close" data-popup-close="popup-2" href="#">x</a>
+      </div>
+      <!-- cancel form -->
+      <!-- support form -->
+      <div class="popup" data-popup="popup-3">
+         <div class="popup-inner">
+            <div class="cancel-box">
+               <h2 class="booking-title text-center text-pink mb-40"> Send your message</h2>
+               <div class="screen__container">
+                  <label for="">Your message</label>
+                  <textarea class="full-width" id="" rows="8" placeholder="comment here..">
+                  </textarea>
+               </div>
+               <div class="btn-sec d-flex justify-around">
+                  <button class="btn btn-previous" data-popup-close="popup-3"> Cancel </button>
+                  <a href=""><button type="Submit" class="btn btn--primary btn-next" data-popup-close="popup-3"> Submit </button></a>
+               </div>
+            </div>
+         </div>
+         <a class="popup-close" data-popup-close="popup-3" href="#">x</a>
+      </div>
+      <!-- support form -->
+      <!-- header
+         ================================================== -->
+            <app-navigation></app-navigation>
+      <!-- end header -->
+      <!-- home
+         ================================================== -->
+      <section id="" class="s-home mini-slide search-bg">
+         <div class="shadow-overlay"></div>
+         <div class="row">
+            <div class="col-twelve text-center mb-40">
+               <h1>
+                  Recent Bookings
+               </h1>
+               <p class="text-white"> Your next and upcoming bookings   </p>
+               <!-- <div class="onoffswitch mx-auto">
+                  <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                      <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                  </label>
+                  </div> -->
+            </div>
+         </div>
+         <!-- end home-content -->
+      </section>
+      <!-- end s-home -->
+      <section id="features" class="s-features search escort py-md-rspn-30">
+         <div class="row block-1-3 block-m-1-2 has-bottom-sep aos-init aos-animate px-sm-0rspn">
+            <div class="custom-tab mt-30px-600">
+              <nav>
+                  <div class="nav nav-tabs tab-slide-lft-rt" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link" routerLinkActive="active" routerLink="/escort/request">Requests ({{requestCount}})</a>
+                      <a class="nav-item nav-link" routerLinkActive="active" routerLink="/escort/booking">Accepted ({{acceptCount}})</a>
+                      <a class="nav-item nav-link" routerLinkActive="active" routerLink="/escort/ongoing">Ongoing ({{ongoingCount}})</a>
+                      <a class="nav-item nav-link" routerLinkActive="active" routerLink="/escort/completed">Completed ({{completedCount}})</a>
+                  </div>
+              </nav>
+               <div class="tab-content" id="nav-tabContent">
+                  <mat-spinner *ngIf="isLoading"></mat-spinner>
+                  <div class="tab-pane fade show active" *ngIf="requests.length > 0 && !isLoading">
+                     <div class="row">
+                        <div class="col-six w-md-100rspn" *ngFor="let request of requests">
+                           <div class="border-box box-shadow position-relative text-center my-md-rspn-0">
+                              <div class="profile-img mt-80px-600">
+                                 <i class="fa fa-user font-3 grey-txt"> </i>
+                              </div>
+                              <h4 class="text-center"> {{request.user_first_name}} {{request.user_last_name}} </h4>
+                              <div class="col-six text-center full-width">
+                                <div class="yellow-rate">
+                                  <ngb-rating [rate]="request.user_rating" max="5" [readonly]="true"></ngb-rating>
+                                </div>
+                              </div>
+                              <ul class="stats-tabs font-16 mt-15 mb-0">
+                                  <li><a href="javascript:void(0)">Rate <em>{{request.total_amount| currency : 'AUD' : true : '4.0'}}</em></a></li>
+                                  <li><a href="javascript:void(0)">Duration <em>{{request.hour_time}} hours</em></a></li>
+                                  <li><a href="javascript:void(0)">User Type<em><span class="green-txt"><i class="fa fa-check-circle small"></i> Premium</span></em></a></li>
+                               </ul>
+                              <div class="col-twelve">
+                                  <div class="table-responsive light-bg p-15">
+                                     <table>
+                                        <tbody class="white-spance-mn-360">
+                                           <tr>
+                                              <td class="w-30"><strong><i class="fa fa-calendar grey-txt mr-10"></i> When </strong></td>
+                                              <td>{{request.booking_date}} (in {{request.booking_time_hour}} hours)</td>
+                                           </tr>
+                                           <tr>
+                                              <td class="height-120 w-30"><strong><i class="fa fa-map-marker grey-txt mr-10"></i> Location </strong></td>
+                                              <td class="height-120">{{request.booking_location}}</td>
+                                           </tr>
+                                           <tr>
+                                              <td class="w-30"><strong><i class="fa fa-home grey-txt mr-10"></i> Room number </strong></td>
+                                              <td>{{request.room_no}}</td>
+                                           </tr>
+                                           <tr>
+                                              <td class="w-30"><strong><i class="fa fa-phone grey-txt mr-10"></i> Client number </strong></td>
+                                              <td>+{{request.user_country_code}}{{request.user_phone_number}}</td>
+                                           </tr>
+                                           <tr>
+                                              <td class="height-120 w-30"><strong> <i class="fa fa-clipboard-list grey-txt mr-10"></i> Services  </strong></td>
+                                              <td class="height-120">
+                                                 <span class="badge active" *ngFor="let service of request.services">{{service.title}}</span>
+                                              </td>
+                                           </tr>
+                                        </tbody>
+                                     </table>
+                                  </div>
+                              </div>
+                              <div class="col-twelve">
+                                 <h5 class="text-center"> Total Payment: <span class="pink-color"><strong>{{request.total_amount| currency : 'AUD' : true : '4.0'}}</strong></span></h5>
+                                 <div class="row">
+                                    <div class="col-six btn-sec text-center">
+                                       <button class="btn btn-previous red-border full-width" data-popup-open="popup-2" (click)="onNotNow(request.booking_id,request.escort_id,request.user_id)"> Cancel </button>
+                                    </div>
+                                    <div class="col-six btn-sec text-center">
+                                       <button class="btn btn-success full-width" (click)="onStart(request.booking_id,request.escort_id,request.user_id)"> Start </button>
+                                    </div>
+                                 </div>
+                                 <div class="share-box">
+                                    <h5 class="green-txt p-15 mt-0"> <i class="fa fa-check"></i> Confirmed</h5>
+                                 </div>
+                                 <div class="msg-box">
+                                    <ul class="inline-list">
+                                      <li *ngIf="subscriptionStatus == '1'"><a href="javascript:void(0)" [routerLink]="['/escort/providerChat', request.user_id]"><i class="fa fa-comments"></i></a></li>
+                                      <li *ngIf="subscriptionStatus == '1'"><a href="javascript:void(0)" (click)="videoCall(request.booking_id,request.escort_id)" ><i class="fa fa-video"></i></a></li>
+
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- col-six -->
+                     </div>
+                     <!--tab closed -->
+                  </div>
+                  <h2  *ngIf="requests.length <= 0 && !isLoading">No Data Available!</h2>
+                 <mat-paginator [length]="totalRequests" [pageSize]="requestsPerPage"  (page)="onChangedPage($event)"
+*ngIf="requests.length > 0"></mat-paginator>
+               </div>
+            </div>
+         </div>
+         <!-- end section-header -->
+      </section>
+      <!-- footer
+         ================================================== -->
+      <app-footer></app-footer>
+      <!-- end s-footer -->
+   </body>

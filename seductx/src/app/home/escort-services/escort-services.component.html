@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>SeductX</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+
+    <!-- script
+    ================================================== -->
+
+</head>
+
+<body id="top">
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <!-- header
+    ================================================== -->
+      <app-navigation></app-navigation>
+    <!-- end header -->
+
+
+    <!-- home
+    ================================================== -->
+    <section id="" class="s-home mini-slide search-bg">
+
+        <div class="shadow-overlay"></div>
+            <div class="row home-content__main">
+                <div class="col-twelve text-center mb-40">
+                    <h1> Escort Signup </h1>
+                <p class="text-white"> Create your account an earn money </p>
+                </div> <!--twelve-->
+
+        </div> <!-- end home-content -->
+        <div class="login-icon"> <i class="fa fa-chevron-down"></i> </div>
+
+    </section> <!-- end s-home -->
+
+<section id="features" class="s-features search escort py-md-rspn-40 py-sm-rspn-0">
+    <div class="section-header w-100 mx-auto mb-40 my-md-rspn-0">
+        <div class="row d-flex px-sm-0rspn mt-md-50rspn">
+            <div class="w-25 text-center">
+                <a class="circle-btn active" href=""> <i class="fa fa-check"></i>  </a>
+                 <p class="text-center mt-15"> Create Profile</p>
+            </div> <!-- col-three -->
+            <div class="w-25 text-center">
+                <a class="circle-btn active" href=""> 2 </a>
+                <p class="text-center mt-15"> Add Services</p>
+            </div> <!-- col-three -->
+            <div class="w-25 text-center">
+                <a class="circle-btn" href=""> 3 </a>
+                 <p class="text-center mt-15"> Your Rates</p>
+            </div> <!-- col-three -->
+            <div class="w-25 text-center">
+                <a class="circle-btn line-none" href=""> 4 </a>
+                 <p class="text-center mt-15"> Your Photos</p>
+            </div> <!-- col-three -->
+        </div>
+
+        <div class="border-box form-box p-40 my-md-rspn-0">
+                      <div class="text-center">
+                        <h3 class="mb-40 text-black"> Services  </h3>
+                    </div>
+                    <div class="gutter-none">
+                        <div class="col-six" *ngFor="let service of service_info; let i = index;">
+                            <div class="list-box d-flex justify-around">
+                                <div>
+                                    <label for="" class="mini-label">{{service.title}}</label>
+                                    <p class="small"> {{service.description}} </p>
+                                </div>
+                                <div>
+                                <input class="styled-checkbox" id="styled-checkbox-{{i}}" type="checkbox" [value]="service.services_id" (change)="onCheck($event,service.services_id)">
+                                <label for="styled-checkbox-{{i}}"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- gutter none -->
+
+
+
+
+
+
+
+                    <div class="col-twelve">
+                        <div class="text-center">
+                        <h3 class="mb-40 text-black"> Additional Services  </h3>
+                    </div>
+                    </div>
+
+                    <div class="gutter-none" *ngFor="let additional_service of additional_service_info; let i = index;">
+                        <div class="col-six">
+                            <div class="d-flex">
+                                <div>
+                                <input class="styled-checkbox" id="styled-checkbox-add-{{i}}" type="checkbox" [value]="additional_service.services_id" (change)="onCheckAdditional($event,i)">
+                                <label for="styled-checkbox-add-{{i}}"></label>
+                                </div>
+                                <div class="ml-20">
+                                    <label for="" class="mini-label">{{additional_service.title}}</label>
+                                    <p class="small">{{additional_service.description}}</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-six">
+                        <div>
+                            <div class="ss-custom-select">
+                            <select class="full-width" id="sampleInfo{{i}}" (change)="onChage(i)">
+                                <option  *ngFor="let addtional_info of additional_service.service_addtional_info" [value]="addtional_info.service_price_id">{{addtional_info.info}}</option>
+                            </select>
+                            </div>
+                    </div>
+                    </div>
+                    </div> <!-- gutter none -->
+
+
+
+
+
+                <div class="gutter-none">
+                 <div class="col-six pull-left text-left mt-15">
+                    <a href="edit-profile.html"> <button type="button" class="btn btn-previous btn-wd full-width"> Back </button></a>
+                </div>
+                <div class="col-six pull-right text-right mt-15">
+                    <button  type="button"  class="btn btn--primary full-width" (click)="onSave()"> Continue </button>
+                </div>
+                </div>
+
+        </div>
+    </div>
+    </section>
+
+    <!-- footer
+    ================================================== -->
+    <app-footer></app-footer>
+    <!-- end s-footer -->
+
+
+</body>

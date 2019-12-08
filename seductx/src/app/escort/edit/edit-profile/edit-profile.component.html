@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+   <head>
+      <!--- basic page needs
+         ================================================== -->
+      <meta charset="utf-8">
+      <title>SeductX</title>
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- mobile specific metas
+         ================================================== -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- CSS
+         ================================================== -->
+      <!-- script
+         ================================================== -->
+   </head>
+   <body id="top">
+      <!-- preloader
+         ================================================== -->
+      <!-- <div id="preloader">
+         <div id="loader" class="dots-jump">
+             <div></div>
+             <div></div>
+             <div></div>
+         </div>
+         </div> -->
+      <!-- header
+         ================================================== -->
+            <app-navigation></app-navigation>
+      <!-- end header -->
+      <!-- home
+         ================================================== -->
+      <section id="" class="s-home mini-slide search-bg">
+         <div class="shadow-overlay"></div>
+         <div class="row home-content__main">
+            <div class="col-twelve text-center mb-40">
+               <h1> Escort Edit Profile </h1>
+            </div>
+            <!--twelve-->
+         </div>
+         <!-- end home-content -->
+         <div class="login-icon"> <i class="fa fa-chevron-down"></i> </div>
+      </section>
+      <!-- end s-home -->
+      <section id="features" class="s-features search escort">
+         <div class="section-header w-100 mx-auto mb-40 my-md-rspn-0">
+            <div class="border-box form-box p-40 my-md-rspn-0">
+               <mat-spinner *ngIf="isLoading"></mat-spinner>
+               <form [formGroup]="form" (submit)="onSave()" *ngIf="!isLoading">
+               <div class="text-center">
+                  <h3 class="mb-40 text-black"> Create your profile  </h3>
+               </div>
+               <div class="gutter-none">
+                  <div class="col-six">
+                     <div>
+                        <label for="">Nationality</label>
+                        <div class="ss-custom-select" *ngIf="countries_list">
+                           <select class="full-width" formControlName="country_id" (change)="onChangeCountry($event.target.value)">
+                              <option selected="" disabled="" value="">Select your nationality</option>
+                              <option *ngFor="let countries_data of countries_list" [value]="countries_data.id" [selected]="countries_data.id == escortData.country_id">{{countries_data.name}}</option>
+                           </select>
+                        </div>
+                        <P class="error_form" *ngIf="form.get('country_id').invalid">Please enter a Country.</P>
+                     </div>
+                  </div>
+
+                  <div class="col-six">
+                      <div>
+                         <label for="">Current city</label>
+                         <div class="ss-custom-select">
+                            <select class="full-width" formControlName="city_id">
+                               <option selected="" disabled="" value="">Select current city</option>
+                               <option *ngFor="let city_data of city_list" [value]="city_data.id" [selected]="city_data.id == escortData.city_id">{{city_data.name}}</option>
+                            </select>
+                         </div>
+                         <P class="error_form" *ngIf="form.get('city_id').invalid">Please enter a City.</P>
+                      </div>
+                   </div>
+               </div>
+               <div class="gutter-none">
+                  <div class="col-six">
+                     <div>
+                        <label for="">Gender</label>
+                        <div class="ss-custom-select" *ngIf="gender_list">
+                           <select class="full-width" formControlName="gender">
+                           <option *ngFor="let gender_data of gender_list" [value]="gender_data.gender_id" [selected]="gender_data.gender_id == escortData.gender">{{gender_data.name}}</option>
+
+                           </select>
+                        </div>
+                        <P class="error_form" *ngIf="form.get('gender').invalid">Please enter a Gender.</P>
+                     </div>
+                  </div>
+                  <div class="col-six">
+                     <div>
+                        <label for="">Body type <span class="red-txt">*</span></label>
+                        <div class="ss-custom-select" *ngIf="body_type_list">
+                           <select class="full-width"  formControlName="body_type">
+                           <option *ngFor="let body_type_data of body_type_list" [value]="body_type_data.body_type_id" [selected]="body_type_data.body_type_id == escortData.body_type">{{body_type_data.name}}</option>
+                           </select>
+                        </div>
+                        <P class="error_form" *ngIf="form.get('body_type').invalid">Please enter a Body Type.</P>
+                     </div>
+                  </div>
+               </div>
+               <div class="gutter-none">
+                  <div class="col-six">
+                     <div>
+                        <label for="">Age <span class="red-txt">*</span></label>
+                        <input class="full-width" type="text" placeholder="Enter your age" formControlName="age">
+                     </div>
+                     <P class="error_form" *ngIf="form.get('age').invalid">Please enter a Age.</P>
+                  </div>
+                  <div class="col-six">
+                     <div>
+                        <label for="">Height (cm) <span class="red-txt">*</span></label>
+                        <input class="full-width" type="text" placeholder="Your height (cm)" formControlName="height">
+                     </div>
+                     <P class="error_form" *ngIf="form.get('height').invalid">Please enter a height.</P>
+                  </div>
+               </div>
+               <div class="gutter-none">
+                  <div class="col-six">
+                     <div>
+                        <label for="">Bust size<span class="red-txt">*</span></label>
+                        <div class="ss-custom-select" *ngIf="bust_size_list">
+                           <select class="full-width" formControlName="bust_size">
+                              <option selected="" disabled="" value="">Pick bust size</option>
+                              <option *ngFor="let bust_size_data of bust_size_list" [value]="bust_size_data.bust_size_id" [selected]="bust_size_data.bust_size_id == escortData.bust_size">{{bust_size_data.size}}</option>
+                           </select>
+                        </div>
+                        <P class="error_form" *ngIf="form.get('bust_size').invalid">Please enter a Bust Size.</P>
+                     </div>
+                  </div>
+                  <div class="col-six">
+                     <div>
+                        <label for="">Cup size<span class="red-txt">*</span></label>
+                        <div class="ss-custom-select" *ngIf="cup_size_list">
+                           <select class="full-width" formControlName="cup_size">
+                              <option selected="" disabled="" value="">Pick cup size</option>
+                              <option *ngFor="let cup_size_data of cup_size_list" [value]="cup_size_data.cup_size_id" [selected]="cup_size_data.cup_size_id == escortData.cup_size">{{cup_size_data.size}}</option>
+                           </select>
+                        </div>
+                        <P class="error_form" *ngIf="form.get('cup_size').invalid">Please enter a Cup Size.</P>
+                     </div>
+                  </div>
+               </div>
+               <div class="gutter-none">
+                  <div class="col-six">
+                     <div>
+                        <label for="">Waise size<span class="red-txt">*</span></label>
+                        <div class="ss-custom-select" *ngIf="waise_size_list">
+                           <select class="full-width" formControlName="waise_size">
+                              <option selected="" disabled="" value="">Pick waise size</option>
+                              <option *ngFor="let waise_size_data of waise_size_list" [value]="waise_size_data.waise_size_id" [selected]="waise_size_data.waise_size_id == escortData.waise_size">{{waise_size_data.size}}</option>
+                           </select>
+                        </div>
+                        <P class="error_form" *ngIf="form.get('waise_size').invalid">Please enter a Waise Size.</P>
+                     </div>
+                  </div>
+                  <div class="col-six">
+                     <div>
+                        <label for="">Hip size<span class="red-txt">*</span></label>
+                        <div class="ss-custom-select">
+                           <select class="full-width" *ngIf="hip_size_list" formControlName="hip_size">
+                              <option selected="" disabled="" value="">Pick hip size</option>
+                              <option *ngFor="let hip_size_data of hip_size_list" [value]="hip_size_data.hip_size_id" [selected]="hip_size_data.hip_size_id == escortData.hip_size">{{hip_size_data.size}}</option>
+                           </select>
+                        </div>
+                        <P class="error_form" *ngIf="form.get('hip_size').invalid">Please enter a Hip Size.</P>
+                     </div>
+                  </div>
+               </div>
+               <div class="gutter-none">
+                  <div class="col-six">
+                     <div>
+                        <label for="">English<span class="red-txt">*</span></label>
+                        <div class="ss-custom-select">
+                           <select class="full-width" *ngIf="english_list" formControlName="english">
+                              <option selected="" disabled="" value="">language level proficiency</option>
+                              <option *ngFor="let english_data of english_list" [value]="english_data.english_id" [selected]="english_data.english_id == escortData.english">{{english_data.type}}</option>
+                           </select>
+                        </div>
+                        <P class="error_form" *ngIf="form.get('english').invalid">Please enter a English.</P>
+                     </div>
+                  </div>
+                  <div class="col-six">
+                     <div>
+                        <label for="">Chinese<span class="red-txt">*</span></label>
+                        <div class="ss-custom-select" *ngIf="chinese_list">
+                           <select class="full-width" id="sampleRecipientInput" formControlName="chinese">
+                              <option selected="" disabled="" value="">language level proficiency</option>
+                              <option *ngFor="let chinese_data of chinese_list" [value]="chinese_data.chinese_id" [selected]="chinese_data.chinese_id == escortData.chinese">{{chinese_data.type}}</option>
+                           </select>
+                        </div>
+                        <P class="error_form" *ngIf="form.get('chinese').invalid">Please enter a Chinese.</P>
+                     </div>
+                  </div>
+               </div>
+               <div class="gutter-none">
+                  <div class="col-six">
+                     <div>
+                        <label for="">Japanese<span class="red-txt">*</span></label>
+                        <div class="ss-custom-select">
+                           <select class="full-width" *ngIf="japanese_list" formControlName="japanese">
+                              <option selected="" disabled="" value="">language level proficiency</option>
+                              <option *ngFor="let japanese_data of japanese_list" [value]="japanese_data.japanese_id" [selected]="japanese_data.japanese_id == escortData.japanese">{{japanese_data.type}}</option>
+                           </select>
+                        </div>
+                        <P class="error_form" *ngIf="form.get('japanese').invalid">Please enter a Japanese.</P>
+                     </div>
+                  </div>
+                  <div class="col-six">
+                     <div>
+                        <label for="">Korean<span class="red-txt">*</span></label>
+                        <div class="ss-custom-select">
+                           <select class="full-width" id="sampleRecipientInput" *ngIf="korean_list"  formControlName="korean">
+                              <option selected="" disabled="" value="">language level proficiency</option>
+                              <option *ngFor="let korean_data of korean_list" [value]="korean_data.korean_id" [selected]="korean_data.korean_id == escortData.korean">{{korean_data.type}}</option>
+                           </select>
+                        </div>
+                        <P class="error_form" *ngIf="form.get('korean').invalid">Please enter a Korean.</P>
+                     </div>
+                  </div>
+               </div>
+               <div class="gutter-none">
+                  <!-- <div class="col-six pull-left text-left mt-15">
+                     <a href="edit-profile.html"> <button type="button" class="btn btn--primary full-width"> Back </button></a>
+                     </div> -->
+                  <div class="col-six pull-right text-right mt-15">
+                     <button type="submit" class="btn btn--primary full-width"> Continue </button>
+                  </div>
+               </div>
+               </form>
+            </div>
+         </div>
+      </section>
+      <!-- footer
+         ================================================== -->
+      <app-footer></app-footer>
+      <!-- end s-footer -->
+      <!-- Java Script
+         ================================================== -->
+   </body>

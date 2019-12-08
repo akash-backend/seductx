@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>SeductX</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+
+
+
+    <!-- script
+    ================================================== -->
+
+
+</head>
+
+<body id="top">
+
+    <!-- preloader
+    ================================================== -->
+    <!-- <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> -->
+
+
+    <!-- header
+    ================================================== -->
+      <app-navigation></app-navigation>
+    <!-- end header -->
+
+    <section id="features" class="s-features search escort mt-15 mt-md-50rspn">
+    <div class="row px-sm-rspns-18">
+        <div class="gutter-none">
+            <div class="col-twelve text-center-md"><h3 class="mb text-black"> My Account  </h3></div>
+            <app-sidebar></app-sidebar>
+
+            <div class="col-eight w-md-100rspn">
+
+                <div class="border-box mb-sm-rspn-0 p-30 position-relative h-440 mt-md-rspn-0">
+                <div class="profile-slide">
+
+                <div class="custom-tab">
+                    <nav>
+                        <div class="nav nav-tabs tb-scrl-r-rsnps" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link" routerLinkActive="active" routerLink="/user/profile">Personal details</a>
+                            <a class="nav-item nav-link" routerLinkActive="active" routerLink="/user/changepassword">Change password</a>
+                            <a class="nav-item nav-link" routerLinkActive="active" routerLink="/user/bookinghistory">Booking history</a>
+                        </div>
+                    </nav>
+                </div>
+                </div>
+                <div class="table-responsive">
+                    <table>
+
+                            <tbody>
+                            <tr>
+                                <td><strong> Name </strong></td>
+                                <td>{{userInfo['first_name']}} {{userInfo['last_name']}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong> Email address </strong></td>
+                                <td>{{userInfo['email']}}</td>
+                            </tr>
+
+                            <tr>
+                                <td><strong> Phone number </strong></td>
+                                <td> {{userInfo['phone_number']}}</td>
+                            </tr>
+                            </tbody>
+                    </table>
+
+                </div>
+
+            </div> <!-- border-box -->
+
+            </div>
+        </div>
+    </div> <!-- home-content__main -->
+
+    </section>
+
+    <!-- footer
+    ================================================== -->
+    <app-footer></app-footer>
+    <!-- end s-footer -->
+
+</body>

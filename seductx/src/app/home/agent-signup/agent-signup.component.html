@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>SeductX</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+
+    <!-- script
+    ================================================== -->
+
+</head>
+
+<body id="top">
+
+    <!-- preloader
+    ================================================== -->
+    <!-- <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> -->
+
+
+    <!-- header
+    ================================================== -->
+
+    <app-navigation></app-navigation>
+    <!-- end header -->
+
+
+    <!-- home
+    ================================================== -->
+    <section id="" class="s-home mini-slide search-bg">
+
+        <div class="shadow-overlay"></div>
+            <div class="row home-content__main">
+                <div class="col-twelve text-center mb-40">
+                    <h1> Become a SeductX Agent </h1>
+                <p class="text-white"> Create your account an earn money </p>
+                </div> <!--twelve-->
+
+        </div> <!-- end home-content -->
+        <div class="login-icon"> <i class="fa fa-chevron-down"></i> </div>
+
+    </section> <!-- end s-home -->
+
+<section id="features" class="s-features search agent">
+
+        <div class="border-box form-sec section-header">
+          <form [formGroup]="form" (submit)="onSignup()">
+            <!--                     <div class="text-center">
+                  <h3> Sign Up </h3>
+              </div> -->
+              <div class="gutter-none">
+                  <div class="col-six mrgn-magic-form mb-20">
+                      <label for="">First name</label>
+                      <input class="full-width" type="text" placeholder="" id="" formControlName="first_name">
+                      <P class="error_form" *ngIf="form.get('first_name').invalid">Please enter a first name.</P>
+                  </div>
+                  <div class="col-six mrgn-magic-form mb-20">
+                      <label for="">Last name</label>
+                      <input class="full-width" type="text" placeholder="" id="" formControlName="last_name">
+                      <P  class="error_form" *ngIf="form.get('last_name').invalid">Please enter a last name.</P>
+                  </div>
+
+                  <div class="col-twelve mrgn-magic-form mb-20">
+                      <label for="">Email address</label>
+                      <input class="full-width" type="email" placeholder="" id="" formControlName="email" autocomplete="off">
+                      <P class="error_form" *ngIf="form.get('email').invalid">Please enter a email.</P>
+                  </div>
+                  <div class="col-twelve mrgn-magic-form mb-20">
+                    <label for="">Agency Name</label>
+                    <input class="full-width" type="email" placeholder="" id="" formControlName="agency_name">
+                    <P class="error_form" *ngIf="form.get('agency_name').invalid">Please enter a agency name.</P>
+                  </div>
+
+                  <div class="col-twelve mrgn-magic-form mb-20">
+                          <label for="">Password</label>
+                          <input class="full-width" type="password" placeholder="" id="" formControlName="password" autocomplete="new-password">
+                          <P class="error_form" *ngIf="form.get('password').invalid">Please enter a password.</P>
+                  </div>
+
+                  <div class="col-twelve mrgn-magic-form mb-20">
+                      <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" formControlName="address" #search>
+                      <P class="error_form" *ngIf="form.get('address').invalid">Please enter a address.</P>
+                  </div>
+
+              </div>
+
+
+              <div class="mrgn-magic-form mb-20">
+                <label for="">Map</label>
+                <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" >
+                    <agm-marker
+                    [latitude]="latitude"
+                    [longitude]="longitude"></agm-marker>
+                </agm-map>
+
+            </div>
+
+              <div class="mrgn-magic-form">
+                  <label for="">Phone</label>
+                  <div class="gutter-none">
+                  <div class="col-five">
+                      <div class="ss-custom-select">
+                        <select class="full-width" id="sampleRecipientInput" formControlName="country_code">
+                            <option value="">Select Country</option>
+                            <option *ngFor="let country_data of country_list" [value]="country_data.id">{{country_data.name}} ({{country_data.phonecode}})</option>
+                        </select>
+                      </div>
+                      <P class="error_form" *ngIf="form.get('country_code').invalid">Please enter a Country Code.</P>
+                  </div>
+                  <div class="col-seven">
+                    <input class="full-width" type="text" placeholder="" id="pwd" formControlName="phone_number">
+                    <P class="error_form" *ngIf="form.get('phone_number').invalid">Please enter a Phone Number.</P>
+                  </div>
+              </div>
+              </div>
+
+
+
+
+              <div class="col-twelve mt-20px">
+              <input class="btn--primary full-width" type="submit" value="Submit">
+            </div>
+              <div class="col-twelve">
+                  <label class="text-center">
+
+                  <h5> <span class="text-grey font-normal"> Already have an account?</span> <strong><a routerLink="/home/agentLogin"> Login </a></strong> </h5>
+                  </label>
+                </div>
+          </form>
+        </div>
+
+    </section>
+
+    <!-- footer
+    ================================================== -->
+    <app-footer></app-footer>
+    <!-- end s-footer -->
+
+
+    <!-- Java Script
+    ================================================== -->
+
+
+</body>
